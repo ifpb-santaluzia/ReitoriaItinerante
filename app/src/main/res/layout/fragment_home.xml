@@ -4,19 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.menu.MenuFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/adicionarSugestaoButton"
+        android:layout_width="180sp"
+        android:layout_height="140sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/background_button"
+        android:fontFamily="@font/barlow_bold"
+        android:text="Adicionar Sugestão"
+        android:textColor="@color/white"
+        android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/verSugestaoButton"
+        android:layout_width="180sp"
+        android:layout_height="140sp"
+        android:layout_marginStart="212dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/background_button"
+        android:fontFamily="@font/barlow_bold"
+        android:text="Ver Sugestões"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/programacaoButton"
+        android:layout_width="180sp"
+        android:layout_height="140sp"
+        android:layout_marginStart="212dp"
+        android:layout_marginTop="188dp"
+        android:background="@drawable/background_button"
+        android:fontFamily="@font/barlow_bold"
+        android:text="Adicionar Sugestão"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/estatisticaButton"
+        android:layout_width="180sp"
+        android:layout_height="140sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="188dp"
+        android:background="@drawable/background_button"
+        android:fontFamily="@font/barlow_bold"
+        android:text="Adicionar Sugestão"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="372dp"
+        android:layout_height="264dp"
+        android:src="@mipmap/reitoria_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
