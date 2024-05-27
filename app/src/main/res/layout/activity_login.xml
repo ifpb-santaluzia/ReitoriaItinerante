@@ -7,45 +7,61 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <ImageView
-        android:id="@+id/ifpbImageView"
-        android:layout_width="213dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/signInWithGoogle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ifpb_imagem" />
-
     <TextView
         android:id="@+id/signInWithGoogle"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginBottom="416dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="195dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="101dp"
         android:background="#C1C5C1"
         android:backgroundTint="#DFDEDE"
         android:gravity="center"
         android:text="Sign in with Google"
         android:textColor="#474747"
         android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/logoImageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ifpbImageView"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/googleImageView"
         android:layout_width="31dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="154dp"
-        android:layout_marginBottom="135dp"
-        app:layout_constraintBottom_toBottomOf="@+id/signInWithGoogle"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="195dp"
+        android:layout_marginBottom="261dp"
+        app:layout_constraintBottom_toTopOf="@+id/logoImageView"
+        app:layout_constraintEnd_toStartOf="@+id/signInWithGoogle"
         app:layout_constraintStart_toStartOf="@+id/signInWithGoogle"
-        app:layout_constraintTop_toTopOf="@+id/ifpbImageView"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/googleg_standard_color_18" />
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="311dp"
+        android:layout_height="143dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="102dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/googleImageView"
+        app:srcCompat="@drawable/reitoria_logo" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="355dp"
+        android:layout_height="130dp"
+        android:layout_marginEnd="96dp"
+        app:layout_constraintBottom_toTopOf="@+id/signInWithGoogle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.046"
+        app:srcCompat="@drawable/ifpb" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
