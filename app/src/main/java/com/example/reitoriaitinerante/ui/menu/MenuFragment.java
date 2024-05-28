@@ -11,18 +11,18 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.reitoriaitinerante.databinding.FragmentHomeBinding;
+import com.example.reitoriaitinerante.databinding.FragmentMenuBinding;
 
 public class MenuFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
+    private FragmentMenuBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         MenuViewModel menuViewModel =
                 new ViewModelProvider(this).get(MenuViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(getLayoutInflater(), container, false);
+        binding = FragmentMenuBinding.inflate(getLayoutInflater(), container, false);
         View root = binding.getRoot();
 
         final Button adicionarSugestaoButton = binding.adicionarSugestaoButton;
