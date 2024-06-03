@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="campus" >
+        <item>Escolha seu campus</item>
+        <item>Areia</item>
+        <item>Cabedelo</item>
+        <item>Cabedelo-Centro</item>
+        <item>Cajazeiras</item>
+        <item>Campina Grande</item>
+        <item>Esperança</item>
+        <item>Guarabira</item>
+        <item>Itabaiana</item>
+        <item>Itaporanga</item>
+        <item>João Pessoa</item>
+        <item>Mangabeira</item>
+        <item>Monteiro</item>
+        <item>Patos</item>
+        <item>Pedras de Fogo</item>
+        <item>Picuí</item>
+        <item>Princesa Isabel</item>
+        <item>Santa Luzia</item>
+        <item>Santa Rita</item>
+        <item>Soledade</item>
+        <item>Sousa</item>
+    </string-array>
+    
+    <string-array name="modalidade">
+        <item>Escolha sua modalidade</item>
+        <item>Técnico Integrado</item>
+        <item>Técnico Subsequente</item>
+        <item>Súperior</item>
+    </string-array>
+
+    <string-array name="turma_integrado">
+        <item>Selecione sua turma</item>
+        <item>1° Ano</item>
+        <item>2° Ano</item>
+        <item>3° Ano</item>
+    </string-array>
+
+    <string-array name="curso">
+        <item>Selecione seu curso</item>
+        <item>Administração</item>
+        <item>Agroecologia</item>
+        <item>Agroindústria</item>
+        <item>Agropecuária</item>
+        <item>Alimentos</item>
+        <item>Análise e Desenvolvimento de Sistemas</item>
+        <item>Automação Industrial</item>
+        <item>Ciências Biológicas</item>
+        <item>Comércio Exterior</item>
+        <item>Computação</item>
+        <item>Construção de Edifícios</item>
+        <item>Contabilidade</item>
+        <item>Controle Ambiental</item>
+        <item>Cuidados de Idosos</item>
+        <item>Desenho de Construção Civil</item>
+        <item>Design de Interiores</item>
+        <item>Design Gráfico</item>
+        <item>Edificações</item>
+        <item>Educação Física</item>
+        <item>Eletromecânica</item>
+        <item>Eletrônica</item>
+        <item>Engenharia Ambiental e Sanitária</item>
+        <item>Engenharia Civil</item>
+        <item>Engenharia da Computação</item>
+        <item>Engenharia Elétrica</item>
+        <item>Engenharia Eletrônica</item>
+        <item>Engenharia Mecânica</item>
+        <item>Geografia</item>
+        <item>Gestão Ambiental</item>
+        <item>Gestão Comercial</item>
+        <item>Gestão da Produção Industrial</item>
+        <item>Gestão de Recursos Humanos</item>
+        <item>Gestão de Turismo</item>
+        <item>Informática</item>
+        <item>Instrumento Musical</item>
+        <item>Manutenção e Suporte em Informática</item>
+        <item>Marketing</item>
+        <item>Matemática</item>
+        <item>Medicina Veterinária</item>
+        <item>Meio Ambiente</item>
+        <item>Mineração</item>
+        <item>Música</item>
+        <item>Petróleo e Gás</item>
+        <item>Processos Gerenciais</item>
+        <item>Química</item>
+        <item>Recursos Pesqueiros</item>
+        <item>Redes de Computadores</item>
+        <item>Refrigeração e Climatização</item>
+        <item>Secretariado</item>
+        <item>Sistemas para Internet</item>
+        <item>Segurança do Trabalho</item>
+    </string-array>
+</resources>
