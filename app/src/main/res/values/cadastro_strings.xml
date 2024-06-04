@@ -38,6 +38,18 @@
         <item>3° Ano</item>
     </string-array>
 
+    <string-array name="turma_subsequente">
+        <item>Selecione sua turma</item>
+        <item>1° Período</item>
+        <item>2° Período</item>
+        <item>3° Período</item>
+        <item>4° Período</item>
+    </string-array>
+
+    <string-array name="opcao_padrao">
+        <item>----</item>
+    </string-array>
+
     <string-array name="curso">
         <item>Selecione seu curso</item>
         <item>Administração</item>

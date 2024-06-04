@@ -3,6 +3,7 @@ package com.example.reitoriaitinerante;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -12,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.util.Arrays;
 
 public class CadastroActivity extends AppCompatActivity {
 
@@ -40,6 +43,33 @@ public class CadastroActivity extends AppCompatActivity {
         // Configurando o botão de salvar
         Button salvarButton = findViewById(R.id.salvarButton);
         salvarButton.setOnClickListener(v -> salvarDados());
+
+        modalidadeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String[] array = null;
+                ArrayAdapter<String> arrayAdapter;
+                switch (modalidadeSpinner.getSelectedItem().toString()){
+                    case "Técnico Integrado":
+                        array = getResources().getStringArray(R.array.turma_integrado);
+                        break;
+                    case "Técnico Subsequente":
+                        array = getResources().getStringArray(R.array.turma_subsequente);
+                        break;
+                    default:
+                        array = getResources().getStringArray(R.array.opcao_padrao);
+                        break;
+                }
+                arrayAdapter = new ArrayAdapter<String>(
+                        getApplicationContext(), android.R.layout.simple_spinner_item, array );
+                turmaSpinner.setAdapter(arrayAdapter);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 
     private void salvarDados() {
