@@ -5,8 +5,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,14 +14,15 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.util.Arrays;
-
 public class CadastroActivity extends AppCompatActivity {
 
+    private EditText nomeEditText;
     private Spinner campusSpinner;
     private Spinner modalidadeSpinner;
     private Spinner turmaSpinner;
     private Spinner cursoSpinner;
+    private Button salvarButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +35,18 @@ public class CadastroActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Inicializando os Spinners
+        // Inicializando as variaveis
+        nomeEditText = findViewById(R.id.nomeEditText);
         campusSpinner = findViewById(R.id.campusSpinner);
         modalidadeSpinner = findViewById(R.id.modalidadeSpinner);
         turmaSpinner = findViewById(R.id.turmaSpinner);
         cursoSpinner = findViewById(R.id.cursoSpinner);
+        salvarButton = findViewById(R.id.salvarButton);
 
         // Configurando o botão de salvar
-        Button salvarButton = findViewById(R.id.salvarButton);
         salvarButton.setOnClickListener(v -> salvarDados());
 
+        // Filtragem das turmas de acordo com sua modalidade
         modalidadeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -55,6 +58,9 @@ public class CadastroActivity extends AppCompatActivity {
                         break;
                     case "Técnico Subsequente":
                         array = getResources().getStringArray(R.array.turma_subsequente);
+                        break;
+                    case "Súperior":
+                        array = getResources().getStringArray(R.array.turma_superior);
                         break;
                     default:
                         array = getResources().getStringArray(R.array.opcao_padrao);
@@ -72,7 +78,9 @@ public class CadastroActivity extends AppCompatActivity {
         });
     }
 
+    // Metodo para salvar os dados dos usuários quando clickar no botão
     private void salvarDados() {
+        String nome = nomeEditText.getText().toString();
         String campus = campusSpinner.getSelectedItem().toString();
         String modalidade = modalidadeSpinner.getSelectedItem().toString();
         String turma = turmaSpinner.getSelectedItem().toString();

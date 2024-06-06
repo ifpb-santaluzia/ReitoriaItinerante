@@ -46,8 +46,22 @@
         <item>4° Período</item>
     </string-array>
 
+    <string-array name="turma_superior">
+        <item>Selecione sua turma</item>
+        <item>1° Período</item>
+        <item>2° Período</item>
+        <item>3° Período</item>
+        <item>4° Período</item>
+        <item>5° Período</item>
+        <item>6° Período</item>
+        <item>7° Período</item>
+        <item>8° Período</item>
+        <item>9° Período</item>
+        <item>10° Período</item>
+    </string-array>
+
     <string-array name="opcao_padrao">
-        <item>----</item>
+        <item>Selecione sua turma</item>
     </string-array>
 
     <string-array name="curso">
@@ -99,7 +113,6 @@
         <item>Química</item>
         <item>Recursos Pesqueiros</item>
         <item>Redes de Computadores</item>
-        <item>Refrigeração e Climatização</item>
         <item>Secretariado</item>
         <item>Sistemas para Internet</item>
         <item>Segurança do Trabalho</item>
