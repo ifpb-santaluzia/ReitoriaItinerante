@@ -1,5 +1,6 @@
 package com.example.reitoriaitinerante;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -105,6 +106,9 @@ public class CadastroActivity extends AppCompatActivity {
         String modalidade = modalidadeSpinner.getSelectedItem().toString();
         String turma = turmaSpinner.getSelectedItem().toString();
         String curso = cursoSpinner.getSelectedItem().toString();
+
+        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(intent);
 
     }
 }
