@@ -113,7 +113,7 @@
                 android:layout_height="56dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/rounded_background"
-                android:entries="@array/turma_integrado"
+                android:entries="@array/opcao_padrao_turma"
                 tools:layout_editor_absoluteX="8dp"
                 tools:layout_editor_absoluteY="448dp" />
 
@@ -135,7 +135,7 @@
                 android:layout_height="56dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/rounded_background"
-                android:entries="@array/curso"
+                android:entries="@array/opcao_padrao_curso"
                 tools:layout_editor_absoluteX="8dp"
                 tools:layout_editor_absoluteY="562dp" />
 

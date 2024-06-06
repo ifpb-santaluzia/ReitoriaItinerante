@@ -1,12 +1,14 @@
 package com.example.reitoriaitinerante;
 
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,7 +36,7 @@ public class CadastroActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
+        getSupportActionBar().hide();
         // Inicializando as variaveis
         nomeEditText = findViewById(R.id.nomeEditText);
         campusSpinner = findViewById(R.id.campusSpinner);
@@ -50,25 +52,42 @@ public class CadastroActivity extends AppCompatActivity {
         modalidadeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String[] array = null;
-                ArrayAdapter<String> arrayAdapter;
+                String[] arrayTurma = null;
+                ArrayAdapter<String> arrayAdapterTurma;
+                String[] arrayCurso = null;
+                ArrayAdapter<String> arrayAdapterCurso;
                 switch (modalidadeSpinner.getSelectedItem().toString()){
                     case "Técnico Integrado":
-                        array = getResources().getStringArray(R.array.turma_integrado);
+                        arrayTurma = getResources().getStringArray(R.array.turma_integrado);
+                        arrayCurso = getResources().getStringArray(R.array.curso_tecnico);
+                        turmaSpinner.setEnabled(true);
+                        cursoSpinner.setEnabled(true);
                         break;
                     case "Técnico Subsequente":
-                        array = getResources().getStringArray(R.array.turma_subsequente);
+                        arrayTurma = getResources().getStringArray(R.array.turma_subsequente);
+                        arrayCurso = getResources().getStringArray(R.array.curso_tecnico);
+                        turmaSpinner.setEnabled(true);
+                        cursoSpinner.setEnabled(true);
                         break;
-                    case "Súperior":
-                        array = getResources().getStringArray(R.array.turma_superior);
+                    case "Superior":
+                        arrayTurma = getResources().getStringArray(R.array.turma_superior);
+                        arrayCurso = getResources().getStringArray(R.array.curso_superior);
+                        turmaSpinner.setEnabled(true);
+                        cursoSpinner.setEnabled(true);
                         break;
                     default:
-                        array = getResources().getStringArray(R.array.opcao_padrao);
+                        arrayTurma = getResources().getStringArray(R.array.opcao_padrao_turma);
+                        arrayCurso = getResources().getStringArray(R.array.opcao_padrao_curso);
+                        turmaSpinner.setEnabled(false);
+                        cursoSpinner.setEnabled(false);
                         break;
                 }
-                arrayAdapter = new ArrayAdapter<String>(
-                        getApplicationContext(), android.R.layout.simple_spinner_item, array );
-                turmaSpinner.setAdapter(arrayAdapter);
+                arrayAdapterTurma = new ArrayAdapter<String>(
+                        getApplicationContext(), android.R.layout.simple_spinner_item, arrayTurma );
+                turmaSpinner.setAdapter(arrayAdapterTurma);
+                arrayAdapterCurso = new ArrayAdapter<String>(
+                        getApplicationContext(), android.R.layout.simple_spinner_item, arrayCurso );
+                cursoSpinner.setAdapter(arrayAdapterCurso);
             }
 
             @Override
@@ -76,6 +95,7 @@ public class CadastroActivity extends AppCompatActivity {
 
             }
         });
+
     }
 
     // Metodo para salvar os dados dos usuários quando clickar no botão
@@ -85,5 +105,6 @@ public class CadastroActivity extends AppCompatActivity {
         String modalidade = modalidadeSpinner.getSelectedItem().toString();
         String turma = turmaSpinner.getSelectedItem().toString();
         String curso = cursoSpinner.getSelectedItem().toString();
+
     }
 }
