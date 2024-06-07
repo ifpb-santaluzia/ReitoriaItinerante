@@ -39,6 +39,7 @@ private Button irButton;
                         .setAnchorView(R.id.fab).show();
             }
         });
+        irButton = findViewById(R.id.irButton);
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
@@ -51,6 +52,13 @@ private Button irButton;
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+        irButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -67,4 +75,7 @@ private Button irButton;
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+
+
 }

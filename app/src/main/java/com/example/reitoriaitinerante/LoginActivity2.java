@@ -26,9 +26,5 @@ public class LoginActivity2 extends AppCompatActivity {
 
         textView = findViewById(R.id.textView);
 
-        Intent intent = getIntent();
-        String email = intent.getStringExtra("email");
-        String nome = intent.getStringExtra("nome");
-        textView.setText(email + " " + nome);
     }
 }

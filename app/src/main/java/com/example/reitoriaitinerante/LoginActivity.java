@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -41,12 +41,14 @@ public class LoginActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
             // User is signed in, proceed to main activity
-            startActivity(new Intent(LoginActivity.this, LoginActivity2.class));
-            finish();
+            Intent intent = new Intent(getApplicationContext(), LoginActivity2.class);
+            startActivity(intent);
+finish();
         }
-
         // Start Google Sign-In
         findViewById(R.id.signInWithGoogle).setOnClickListener(v -> signInWithGoogle(mGoogleSignInClient));
+
+
     }
 
     private void signInWithGoogle(GoogleSignInClient mGoogleSignInClient) {
@@ -82,8 +84,8 @@ public class LoginActivity extends AppCompatActivity {
                         Log.d("TAG", "signInWithCredential:success");
                         FirebaseUser user = mAuth.getCurrentUser();
                         Intent intent = new Intent(LoginActivity.this, LoginActivity2.class);
-                        intent.putExtra("email",user.getEmail());
-                        intent.putExtra("nome",user.getDisplayName());
+                        intent.putExtra("email", user.getEmail());
+                        intent.putExtra("nome", user.getDisplayName());
                         startActivity(intent);
                         finish();
                     } else {
