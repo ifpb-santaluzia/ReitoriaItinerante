@@ -24,6 +24,10 @@ public class LoginActivity2 extends AppCompatActivity {
             return insets;
         });
 
+        Intent intent = getIntent();
+        String email = intent.getStringExtra("email");
+        String nome = intent.getStringExtra("nome");
+
         textView = findViewById(R.id.textView);
 
     }

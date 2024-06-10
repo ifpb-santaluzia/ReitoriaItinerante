@@ -83,7 +83,7 @@ finish();
                         // Sign in success, update UI with the signed-in user's information
                         Log.d("TAG", "signInWithCredential:success");
                         FirebaseUser user = mAuth.getCurrentUser();
-                        Intent intent = new Intent(LoginActivity.this, LoginActivity2.class);
+                        Intent intent = new Intent(getApplicationContext(), LoginActivity2.class);
                         intent.putExtra("email", user.getEmail());
                         intent.putExtra("nome", user.getDisplayName());
                         startActivity(intent);
