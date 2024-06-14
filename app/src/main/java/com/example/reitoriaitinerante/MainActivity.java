@@ -1,8 +1,10 @@
 package com.example.reitoriaitinerante;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Button;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -16,10 +18,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.reitoriaitinerante.databinding.ActivityMainBinding;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+
+    private List<Sugestion> listaSugestion = new ArrayList<>();
+
+    private Button verSugestaoButton;
 
 
     @Override
@@ -28,6 +38,19 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        verSugestaoButton = findViewById(R.id.verSugestaoButton);
+
+        verSugestaoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), VerSugestaoActivity.class);
+                Sugestion sugestion = new Sugestion("Cientistas da Universidade do Sul da Califórnia (USC) provaram, em um novo estudo, que o núcleo interno da Terra está desacelerando em relação à superfície do planeta. As consequências disso ainda são desconhecidas, mas pesquisadores especulam que a duração dos dias pode mudar.", "aaaa", false);
+                listaSugestion.add(sugestion);
+                intent.putExtra("listaSugestion", (Serializable) listaSugestion);
+                startActivity(intent);
+            }
+        });
 
         setSupportActionBar(binding.appBarMain.toolbar);
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
