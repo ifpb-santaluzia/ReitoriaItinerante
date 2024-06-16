@@ -4,6 +4,7 @@ package com.example.reitoriaitinerante;
 
 import static java.security.AccessController.getContext;
 
+import android.animation.ValueAnimator;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ShapeDrawable;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -78,9 +80,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
             public void onClick(View v) {
                 if (holder.titulo.getMaxLines() == 2) {
                     holder.titulo.setMaxLines(Integer.MAX_VALUE);
-
-                    ViewPropertyAnimatorCompat animator = ViewCompat.animate(holder.readMoreButton);
-                    animator.rotationX(180f).setDuration(300)
+                    
+                    ViewPropertyAnimatorCompat animator2 = ViewCompat.animate(holder.readMoreButton);
+                    animator2.rotationX(180f).setDuration(300)
                             .setInterpolator(AnimationUtils.loadInterpolator(holder.itemView.getContext(), android.R.anim.accelerate_decelerate_interpolator))
                             .withEndAction(new Runnable() {
                                 @Override
@@ -113,6 +115,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         Button readMoreButton;
+
+        RelativeLayout layout;
         Button likeButton;
         TextView aluno;
         TextView curtidasTextview;
@@ -121,6 +125,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            layout = itemView.findViewById(R.id.layout1);
             aluno = itemView.findViewById(R.id.aluno);
             curtidasTextview = itemView.findViewById(R.id.curtidas);
             titulo = itemView.findViewById(R.id.titulo2TextView);
