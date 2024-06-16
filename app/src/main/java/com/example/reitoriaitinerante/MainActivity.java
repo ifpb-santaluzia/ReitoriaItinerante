@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), VerSugestaoActivity.class);
-                Sugestion sugestion = new Sugestion("Cientistas da Universidade do Sul da Califórnia (USC) provaram, em um novo estudo, que o núcleo interno da Terra está desacelerando em relação à superfície do planeta. As consequências disso ainda são desconhecidas, mas pesquisadores especulam que a duração dos dias pode mudar.", "aaaa", false);
+                Sugestion sugestion = new Sugestion("Cientistas da Universidade do Sul da Califórnia (USC) provaram, em um novo estudo, que o núcleo interno da Terra está desacelerando em relação à superfície do planeta. As consequências disso ainda são desconhecidas, mas pesquisadores especulam que a duração dos dias pode mudar.", "aaaa", true);
                 listaSugestion.add(sugestion);
                 intent.putExtra("listaSugestion", (Serializable) listaSugestion);
                 startActivity(intent);

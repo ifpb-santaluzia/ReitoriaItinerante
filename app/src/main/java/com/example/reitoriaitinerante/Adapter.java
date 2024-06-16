@@ -1,6 +1,12 @@
 package com.example.reitoriaitinerante;
 
 
+
+import static java.security.AccessController.getContext;
+
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,10 +16,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.ViewPropertyAnimatorCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
@@ -35,9 +44,34 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Sugestion sugestion = listaSugetion.get(position);
 
+        if (sugestion.getAnonimo() == true){
+            holder.aluno.setText("Anônimo");
+        }
+
         holder.titulo.setText(sugestion.getSugestao());
         holder.titulo.setMaxLines(2);
         holder.titulo.setEllipsize(TextUtils.TruncateAt.END);
+
+        Drawable drawable = ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.gostar_preenchido);
+        Drawable drawable2 = ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.gostar);
+
+        holder.likeButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (holder.likeButton.getBackground() == drawable){
+                    holder.likeButton.setBackground(drawable2);
+                    int contagemCurtidas = 0;
+
+                    holder.curtidasTextview.setText(String.valueOf(contagemCurtidas));
+                } else {
+                    holder.likeButton.setBackground(drawable);
+                    int contagemCurtidas = 0;
+                    contagemCurtidas++;
+                    holder.curtidasTextview.setText(String.valueOf(contagemCurtidas));
+                }
+            }
+        });
 
         holder.readMoreButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,13 +113,19 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         Button readMoreButton;
+        Button likeButton;
+        TextView aluno;
+        TextView curtidasTextview;
         TextView titulo;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            aluno = itemView.findViewById(R.id.aluno);
+            curtidasTextview = itemView.findViewById(R.id.curtidas);
             titulo = itemView.findViewById(R.id.titulo2TextView);
             readMoreButton = itemView.findViewById(R.id.read_more_button);
+            likeButton = itemView.findViewById(R.id.like_button);
         }
     }
 }

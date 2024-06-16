@@ -1,42 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_margin="10sp"
     android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:background="@drawable/shape_background"
-        tools:ignore="MissingConstraints">
-
-        <TextView
-            android:id="@+id/titulo2TextView"
-            android:fontFamily="@font/barlow_bold"
+        <RelativeLayout
+            android:id="@+id/layout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:maxLines="2"
-            android:text="Titulo"
-            android:layout_margin="10dp"
-            android:layout_marginLeft="0dp"
-            android:textAlignment="textStart"
-            android:textSize="24sp"
-            android:layout_weight="2" />
+            tools:ignore="MissingConstraints">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/read_more_button"
-            android:layout_width="18dp"
-            android:layout_marginRight="10dp"
-            android:layout_height="18dp"
-            android:background="@drawable/seta_para_baixo"
-            android:layout_weight="0.1" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/denunciar_button"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_below="@id/layout1"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/atencao"
+                    tools:ignore="MissingConstraints" />
 
+                <RelativeLayout
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout1"
+                    android:layout_alignParentRight="true">
 
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/like_button"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_marginTop="10dp"
 
-    </LinearLayout>
-</LinearLayout>
+                            android:background="@drawable/gostar"
+                            tools:ignore="MissingConstraints" />
+
+                        <TextView
+                            android:id="@+id/curtidas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/like_button"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/barlow_bold"
+                            android:text="0"
+                            android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_background"
+                    android:padding="10dp"
+                    tools:ignore="MissingConstraints">
+
+                        <TextView
+                            android:id="@+id/aluno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/barlow_bold"
+                            android:text="Aluno"
+                            android:textSize="24sp" />
+
+                        <TextView
+                            android:id="@+id/titulo2TextView"
+                            android:layout_width="300sp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/aluno"
+                            android:layout_alignLeft="@id/read_more_button"
+                            android:layout_alignParentLeft="true"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/barlow_bold"
+                            android:maxLines="2"
+                            android:text="Sugestão"
+                            android:textSize="20sp" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/read_more_button"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/seta_para_baixo" />
+
+                </RelativeLayout>
+        </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
