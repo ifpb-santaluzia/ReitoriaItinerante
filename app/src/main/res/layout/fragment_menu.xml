@@ -10,13 +10,13 @@
         android:id="@+id/adicionarSugestaoButton"
         android:layout_width="180sp"
         android:layout_height="140sp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/background_button"
         android:fontFamily="@font/barlow_bold"
         android:text="Adicionar Sugestão"
         android:textColor="@color/white"
         android:textSize="28sp"
+        app:layout_constraintEnd_toStartOf="@+id/verSugestaoButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,41 +24,41 @@
         android:id="@+id/verSugestaoButton"
         android:layout_width="180sp"
         android:layout_height="140sp"
-        android:layout_marginStart="212dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/background_button"
         android:fontFamily="@font/barlow_bold"
         android:text="Ver Sugestões"
         android:textColor="@color/white"
         android:textSize="28sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/estatisticaButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/programacaoButton"
         android:layout_width="180sp"
         android:layout_height="140sp"
-        android:layout_marginStart="212dp"
         android:layout_marginTop="188dp"
         android:background="@drawable/background_button"
         android:fontFamily="@font/barlow_bold"
         android:text="Programação"
         android:textColor="@color/white"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/estatisticaButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/estatisticaButton"
         android:layout_width="180sp"
         android:layout_height="140sp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="188dp"
         android:background="@drawable/background_button"
         android:fontFamily="@font/barlow_bold"
         android:text="Estatísticas"
         android:textColor="@color/white"
         android:textSize="26sp"
+        app:layout_constraintEnd_toStartOf="@+id/programacaoButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

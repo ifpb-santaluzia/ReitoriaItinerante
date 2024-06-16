@@ -40,13 +40,14 @@
 
             <EditText
                 android:id="@+id/nomeEditText"
-                android:layout_width="395dp"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/rounded_background"
                 android:ems="10"
                 android:foregroundTint="#162E2B2B"
                 android:hint=" Insira seu nome"
+                android:paddingLeft="3dp"
                 android:inputType="text"
                 tools:layout_editor_absoluteX="8dp"
                 tools:layout_editor_absoluteY="146dp" />
@@ -65,7 +66,7 @@
 
             <Spinner
                 android:id="@+id/campusSpinner"
-                android:layout_width="395dp"
+                android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/rounded_background"
@@ -87,7 +88,7 @@
 
             <Spinner
                 android:id="@+id/modalidadeSpinner"
-                android:layout_width="395dp"
+                android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/rounded_background"
@@ -109,7 +110,7 @@
 
             <Spinner
                 android:id="@+id/turmaSpinner"
-                android:layout_width="395dp"
+                android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/rounded_background"
@@ -131,7 +132,7 @@
 
             <Spinner
                 android:id="@+id/cursoSpinner"
-                android:layout_width="395dp"
+                android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/rounded_background"

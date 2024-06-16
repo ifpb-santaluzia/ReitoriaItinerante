@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -44,11 +45,17 @@ public class MainActivity extends AppCompatActivity {
         verSugestaoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), VerSugestaoActivity.class);
-                Sugestion sugestion = new Sugestion("Cientistas da Universidade do Sul da Califórnia (USC) provaram, em um novo estudo, que o núcleo interno da Terra está desacelerando em relação à superfície do planeta. As consequências disso ainda são desconhecidas, mas pesquisadores especulam que a duração dos dias pode mudar.", "aaaa", true);
-                listaSugestion.add(sugestion);
-                intent.putExtra("listaSugestion", (Serializable) listaSugestion);
-                startActivity(intent);
+                //Sugestion sugestion = new Sugestion("Cientistas da Universidade do Sul da Califórnia (USC) provaram, em um novo estudo, que o núcleo interno da Terra está desacelerando em relação à superfície do planeta. As consequências disso ainda são desconhecidas, mas pesquisadores especulam que a duração dos dias pode mudar.", "aaaa", true);
+                //listaSugestion.add(sugestion);
+                if(!listaSugestion.isEmpty()){
+                    Intent intent = new Intent(getApplicationContext(), VerSugestaoActivity.class);
+                    intent.putExtra("listaSugestion", (Serializable) listaSugestion);
+                    startActivity(intent);
+                } else {
+                    Toast toast = Toast.makeText(getApplicationContext(), "Ainda não há nenhuma sugestão", Toast.LENGTH_LONG);
+                    toast.show();
+                }
+
             }
         });
 
