@@ -12,14 +12,31 @@
             android:layout_height="wrap_content"
             tools:ignore="MissingConstraints">
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/denunciar_button"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
+                <RelativeLayout
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
                     android:layout_below="@id/layout1"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/atencao"
-                    tools:ignore="MissingConstraints" />
+                    android:layout_alignParentLeft="true">
+
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/denunciar_button"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/atencao"
+                            tools:ignore="MissingConstraints" />
+
+                        <TextView
+                            android:id="@+id/denuncias"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/denunciar_button"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/barlow_bold"
+                            android:text="0/5"
+                            android:textColor="@color/black" />
+                </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="30dp"

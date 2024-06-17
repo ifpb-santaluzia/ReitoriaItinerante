@@ -5,10 +5,13 @@ package com.example.reitoriaitinerante;
 import static java.security.AccessController.getContext;
 
 import android.animation.ValueAnimator;
+import android.app.Dialog;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +19,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
@@ -49,6 +53,44 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         if (sugestion.getAnonimo() == true){
             holder.aluno.setText("Anônimo");
         }
+
+
+
+
+        holder.denunciar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog mDialog = new Dialog(v.getContext());
+                mDialog.setContentView(R.layout.popup);
+                mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+                Button cancelar = mDialog.findViewById(R.id.cancelar_button);
+                Button confirmar = mDialog.findViewById(R.id.confirmar_button);
+
+                cancelar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mDialog.dismiss();
+                    }
+                });
+
+                confirmar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String contagemDenuncias = "0/5";
+                        if (contagemDenuncias == "0/5"){
+                            contagemDenuncias = "1/5";
+                            holder.denunciasTextView.setText(contagemDenuncias);
+                        }
+                        mDialog.dismiss();
+                    }
+                });
+
+                mDialog.setCancelable(false);
+                mDialog.show();
+            }
+        });
+
 
         holder.titulo.setText(sugestion.getSugestao());
         holder.titulo.setMaxLines(2);
@@ -114,17 +156,21 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-        Button readMoreButton;
 
+
+        Button readMoreButton;
+        Button denunciar;
         RelativeLayout layout;
         Button likeButton;
         TextView aluno;
         TextView curtidasTextview;
+        TextView denunciasTextView;
         TextView titulo;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-
+            denunciasTextView = itemView.findViewById(R.id.denuncias);
+            denunciar = itemView.findViewById(R.id.denunciar_button);
             layout = itemView.findViewById(R.id.layout1);
             aluno = itemView.findViewById(R.id.aluno);
             curtidasTextview = itemView.findViewById(R.id.curtidas);
