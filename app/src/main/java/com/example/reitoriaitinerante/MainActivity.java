@@ -25,10 +25,7 @@ import java.sql.Types;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Spinner spinner;
-    private TextView escrevaSugestaoText;
-    private CheckBox anonimoCheckBox;
-    private Button salvarButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,26 +38,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        spinner = findViewById(R.id.spinner);
-        escrevaSugestaoText = findViewById(R.id.escrevaSugestaoText);
-        anonimoCheckBox = findViewById(R.id.anonimoCheckBox);
-        salvarButton = findViewById(R.id.salvarButton);
 
-        salvarButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String topico = spinner.getSelectedItem().toString();
-                String sugestao = escrevaSugestaoText.getText().toString();
-                boolean anonimo = false;
-                if (anonimoCheckBox.isSelected()) {
-                    anonimo = true;
-                } else {
-                    anonimo = false;
-                }
-                Sugestion sugestion = new Sugestion(sugestao, topico, anonimo);
-
-            }
-        });
 
     }
 }
