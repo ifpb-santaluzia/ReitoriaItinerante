@@ -1,5 +1,6 @@
 package com.example.reitoriaitinerante;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,10 +14,15 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 public class AdicionarSugestaoActivity extends AppCompatActivity {
 
     private Spinner spinner;
     private TextView escrevaSugestaoText;
+    private List<Sugestion> listaSugestion = new ArrayList<>();
     private CheckBox anonimoCheckBox;
     private Button salvarButton;
 
@@ -48,7 +54,9 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
                     anonimo = false;
                 }
                 Sugestion sugestion = new Sugestion(sugestao, topico, anonimo);
-
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.putExtra("Sugestao", (Serializable) sugestion);
+                startActivity(intent);
             }
         });
     }
