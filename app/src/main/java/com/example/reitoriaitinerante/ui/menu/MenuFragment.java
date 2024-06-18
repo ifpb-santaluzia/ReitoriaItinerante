@@ -11,11 +11,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.reitoriaitinerante.databinding.FragmentMenuBinding;
+//import com.example.reitoriaitinerante.databinding.FragmentMenuBinding;
 
 public class MenuFragment extends Fragment {
 
-    private FragmentMenuBinding binding;
+    /*private FragmentMenuBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -62,5 +62,5 @@ public class MenuFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
-    }
+    }*/
 }
