@@ -13,8 +13,8 @@
         android:theme="@style/Theme.ReitoriaItinerante"
         tools:targetApi="31">
         <activity
-            android:name=".AdicionarSugestaoAcitivty"
-            android:exported="false" />
+            android:name=".AdicionarSugestaoActivity"
+            android:exported="true" />
         <activity
             android:name=".VerSugestaoActivity"
             android:exported="false" />
