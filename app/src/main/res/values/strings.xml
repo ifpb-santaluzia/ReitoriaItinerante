@@ -10,4 +10,12 @@
     <string name="menu_inicial">Menu</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+    <string-array name="topicos">
+        <item>Infraestrutura</item>
+        <item>Educação</item>
+        <item>Alimentação</item>
+        <item>Lazer</item>
+        <item>Outros</item>
+    </string-array>
 </resources>
