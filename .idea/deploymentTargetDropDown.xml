@@ -21,6 +21,13 @@
       <entry key="app">
         <State />
       </entry>
+      <entry key="ProgramacaoActivity">
+        <State />
+      </entry>
+      <entry key="app">
+      <entry key="MainActivity">
+        <State />
+      </entry>
     </value>
   </component>
 </project>

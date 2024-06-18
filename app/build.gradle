@@ -46,3 +46,4 @@ dependencies {
     androidTestImplementation libs.espresso.core
     implementation 'de.hdodenhof:circleimageview:2.0.0'
 }
+
