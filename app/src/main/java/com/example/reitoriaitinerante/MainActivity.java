@@ -45,11 +45,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        Intent intent1 = new Intent(getApplicationContext(), VerSugestaoActivity.class);
 
-        intent1 = getIntent();
-        sugestion = (Sugestion) getIntent().getSerializableExtra("Sugestao");
-        listaSugestion.add(sugestion);
 
         verProgramacaoButton = findViewById(R.id.programacaoButton);
         verSugestaoButton = findViewById(R.id.verSugestaoButton);
@@ -71,15 +67,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Intent intent = intent1;
+
         verSugestaoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Sugestion sugestion = new Sugestion("Cientistas da Universidade do Sul da Califórnia (USC) provaram, em um novo estudo, que o núcleo interno da Terra está desacelerando em relação à superfície do planeta. As consequências disso ainda são desconhecidas, mas pesquisadores especulam que a duração dos dias pode mudar.", "aaaa", true);
-                //listaSugestion.add(sugestion);
-                List<Sugestion> listaSugestion = (List<Sugestion>) getIntent().getSerializableExtra("listaSugestion");
-                intent.putExtra("listaSugestion", (Serializable) listaSugestion);
-                startActivity(intent);
+                Intent intent = getIntent();
+                sugestion = (Sugestion) getIntent().getSerializableExtra("Sugestao");
+                listaSugestion.add(sugestion);
+
+                Intent intent1 = new Intent(getApplicationContext(), VerSugestaoActivity.class);
+                intent1.putExtra("listaSugestion", (Serializable) listaSugestion);
+                startActivity(intent1);
+
 
             }
         });

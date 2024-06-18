@@ -6,6 +6,7 @@ import static java.security.AccessController.getContext;
 
 import android.animation.ValueAnimator;
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -27,16 +28,17 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.ViewPropertyAnimatorCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.net.URISyntaxException;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
 
-    private List<Sugestion> listaSugetion;
+    private List<Sugestion> listaSugestion;
 
     public Adapter(List<Sugestion> lista) {
-        this.listaSugetion = lista;
+        this.listaSugestion = lista;
     }
 
     @NonNull
@@ -48,12 +50,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Sugestion sugestion = listaSugetion.get(position);
+        Sugestion sugestion = listaSugestion.get(position);
 
         if (sugestion.getAnonimo() == true){
             holder.aluno.setText("Anônimo");
         }
-
 
 
 
@@ -77,10 +78,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
                 confirmar.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        String contagemDenuncias = "0/5";
-                        if (contagemDenuncias == "0/5"){
-                            contagemDenuncias = "1/5";
-                            holder.denunciasTextView.setText(contagemDenuncias);
+                        int contagemDenuncias = 0;
+                        if (contagemDenuncias == 0){
+                            contagemDenuncias++;
+                            holder.denunciasTextView.setText(contagemDenuncias + "/5");
                         }
                         mDialog.dismiss();
                     }
@@ -152,7 +153,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return listaSugetion.size();
+        return listaSugestion.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {

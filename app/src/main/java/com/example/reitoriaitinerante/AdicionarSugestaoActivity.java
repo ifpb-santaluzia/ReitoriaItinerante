@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,7 +49,8 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
                 String topico = spinner.getSelectedItem().toString();
                 String sugestao = escrevaSugestaoText.getText().toString();
                 boolean anonimo = false;
-                if (anonimoCheckBox.isSelected()) {
+                Toast toast = Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG);
+                if (anonimoCheckBox.isChecked()) {
                     anonimo = true;
                 } else {
                     anonimo = false;
