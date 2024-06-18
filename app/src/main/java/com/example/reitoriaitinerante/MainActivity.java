@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
 
     private Button verSugestaoButton;
 
+    private Button verProgramacaoButton;
+
+    private Button adicionarsugestaoButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +44,25 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        verProgramacaoButton = findViewById(R.id.programacaoButton);
         verSugestaoButton = findViewById(R.id.verSugestaoButton);
+        adicionarsugestaoButton = findViewById(R.id.adicionarSugestaoButton);
+
+        verProgramacaoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ProgramacaoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        adicionarsugestaoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), AdicionarSugestaoActivity.class);
+                startActivity(intent);
+            }
+        });
 
         verSugestaoButton.setOnClickListener(new View.OnClickListener() {
             @Override
