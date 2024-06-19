@@ -2,16 +2,26 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="AdicionarSugestaoActivity">
-        <State />
-      </entry>
       <entry key="CadastroActivity">
-        <State />
-      </entry>
-      <entry key="MainActivity">
-        <State />
+        <State>
+          <targetSelectedWithDropDown>
+            <Target>
+              <type value="QUICK_BOOT_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="VIRTUAL_DEVICE_PATH" />
+                  <value value="C:\Users\julio\.android\avd\Pixel_8_Pro_API_34.avd" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </targetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-06-16T14:54:45.588129700Z" />
+        </State>
       </entry>
       <entry key="ProgramacaoActivity">
+        <State />
+      </entry>
+      <entry key="app">
         <State />
       </entry>
     </value>

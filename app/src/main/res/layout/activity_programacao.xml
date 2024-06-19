@@ -12,10 +12,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/barlow_bold"
             android:text="Programação"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp"/>
+            android:textColor="#000000"
+            android:textSize="32sp"
+            android:textStyle="bold" />
 
         <!-- Areia -->
         <Button
@@ -23,9 +25,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#00BF63"
+            android:fontFamily="@font/barlow_extrabold"
             android:text="Areia"
             android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/layoutAreia"
@@ -38,6 +42,7 @@
             android:visibility="gone">
 
             <TextView
+                android:id="@+id/alunoAreiaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
@@ -46,6 +51,7 @@
                 android:textColor="@android:color/white" />
 
             <TextView
+                android:id="@+id/servidorAreiaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
@@ -61,9 +67,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:backgroundTint="#00BF63"
+            android:fontFamily="@font/barlow_extrabold"
             android:text="Cabedelo"
             android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/layoutCabedelo"
@@ -76,6 +84,7 @@
             android:visibility="gone">
 
             <TextView
+                android:id="@+id/alunoCabedeloText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
@@ -84,6 +93,7 @@
                 android:textColor="@android:color/white" />
 
             <TextView
+                android:id="@+id/servidorCabedeloText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
@@ -99,9 +109,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:backgroundTint="#00BF63"
+            android:fontFamily="@font/barlow_extrabold"
             android:text="Cabedelo-Centro"
             android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/layoutCabedeloCentro"
@@ -114,20 +126,22 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/alunoCabedeloCentroText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Aluno: 17/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Aluno: 17/07"
+                android:textColor="@android:color/white" />
 
             <TextView
+                android:id="@+id/servidorCabedeloCentroText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Servidor: 16/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Servidor: 16/07"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
         <!-- Cajazeiras -->
@@ -137,9 +151,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:backgroundTint="#00BF63"
+            android:fontFamily="@font/barlow_extrabold"
             android:text="Cajazeiras"
             android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/layoutCajazeiras"
@@ -152,20 +168,22 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/alunoCajazeirasText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Aluno: 17/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Aluno: 17/07"
+                android:textColor="@android:color/white" />
 
             <TextView
+                android:id="@+id/servidorCajazeirasText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Servidor: 16/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Servidor: 16/07"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
         <!-- Campina Grande -->
@@ -175,9 +193,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:backgroundTint="#00BF63"
+            android:fontFamily="@font/barlow_extrabold"
             android:text="Campina Grande"
             android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/layoutCampinaGrande"
@@ -190,20 +210,22 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/alunoCampinaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Aluno: 17/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Aluno: 17/07"
+                android:textColor="@android:color/white" />
 
             <TextView
+                android:id="@+id/servidorCampinaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Servidor: 16/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Servidor: 16/07"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
         <!-- Esperança -->
@@ -213,35 +235,39 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:backgroundTint="#00BF63"
+            android:fontFamily="@font/barlow_extrabold"
             android:text="Esperança"
             android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/layoutEsperanca"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="vertical"
-            android:visibility="gone"
             android:paddingLeft="16dp"
             android:paddingTop="8dp"
-            android:gravity="center">
+            android:visibility="gone">
 
             <TextView
+                android:id="@+id/alunoEsperancaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Aluno: 17/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Aluno: 17/07"
+                android:textColor="@android:color/white" />
 
             <TextView
+                android:id="@+id/servidorEsperancaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Servidor: 16/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Servidor: 16/07"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
         <!-- Guarabira -->
@@ -251,9 +277,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:backgroundTint="#00BF63"
+            android:fontFamily="@font/barlow_extrabold"
             android:text="Guarabira"
             android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/layoutGuarabira"
@@ -266,20 +294,22 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/alunoGuarabiraText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Aluno: 17/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Aluno: 17/07"
+                android:textColor="@android:color/white" />
 
             <TextView
+                android:id="@+id/servidorGuarabiraText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Servidor: 16/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Servidor: 16/07"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
         <!-- Itabaiana -->
@@ -289,9 +319,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:backgroundTint="#00BF63"
+            android:fontFamily="@font/barlow_extrabold"
             android:text="Itabaiana"
             android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/layoutItabaiana"
@@ -304,20 +336,22 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/alunoItabaianaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Aluno: 17/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Aluno: 17/07"
+                android:textColor="@android:color/white" />
 
             <TextView
+                android:id="@+id/servidorItabaianaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Servidor: 16/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Servidor: 16/07"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
         <!-- Itaporanga -->
@@ -327,9 +361,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:backgroundTint="#00BF63"
+            android:fontFamily="@font/barlow_extrabold"
             android:text="Itaporanga"
             android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/layoutItaporanga"
@@ -342,20 +378,22 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/alunoItaporangaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Aluno: 17/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Aluno: 17/07"
+                android:textColor="@android:color/white" />
 
             <TextView
+                android:id="@+id/servidorItaporangaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Servidor: 16/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Servidor: 16/07"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
         <!-- João Pessoa -->
@@ -365,9 +403,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:backgroundTint="#00BF63"
+            android:fontFamily="@font/barlow_extrabold"
             android:text="João Pessoa"
             android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/layoutJoaoPessoa"
@@ -380,20 +420,22 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/alunoJoaoPessoaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Aluno: 17/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Aluno: 17/07"
+                android:textColor="@android:color/white" />
 
             <TextView
+                android:id="@+id/servidorJoaoPessoaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Servidor: 16/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Servidor: 16/07"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
         <!-- Mangabeira -->
@@ -403,9 +445,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:backgroundTint="#00BF63"
+            android:fontFamily="@font/barlow_extrabold"
             android:text="Mangabeira"
             android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/layoutMangabeira"
@@ -418,20 +462,22 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/alunoSantaLuziaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Aluno: 17/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Aluno: 17/07"
+                android:textColor="@android:color/white" />
 
             <TextView
+                android:id="@+id/servidorSantaLuziaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Servidor: 16/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Servidor: 16/07"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
         <!-- Monteiro -->
@@ -441,9 +487,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:backgroundTint="#00BF63"
+            android:fontFamily="@font/barlow_extrabold"
             android:text="Monteiro"
             android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/layoutMonteiro"
@@ -456,20 +504,22 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/alunoMonteiroText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Aluno: 17/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Aluno: 17/07"
+                android:textColor="@android:color/white" />
 
             <TextView
+                android:id="@+id/servidorMonteiroText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Servidor: 16/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Servidor: 16/07"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
         <!-- Patos -->
@@ -479,9 +529,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:backgroundTint="#00BF63"
+            android:fontFamily="@font/barlow_extrabold"
             android:text="Patos"
             android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/layoutPatos"
@@ -494,20 +546,22 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/alunoPatosText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Aluno: 17/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Aluno: 17/07"
+                android:textColor="@android:color/white" />
 
             <TextView
+                android:id="@+id/servidorPatosText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Servidor: 16/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Servidor: 16/07"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
         <!-- Pedras de Fogo -->
@@ -517,9 +571,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:backgroundTint="#00BF63"
+            android:fontFamily="@font/barlow_extrabold"
             android:text="Pedras de Fogo"
             android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/layoutPedrasFogo"
@@ -532,20 +588,22 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/alunoPedrasFogoText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Aluno: 17/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Aluno: 17/07"
+                android:textColor="@android:color/white" />
 
             <TextView
+                android:id="@+id/servidorPedrasFogoText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Servidor: 16/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Servidor: 16/07"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
         <!-- Picuí -->
@@ -555,9 +613,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:backgroundTint="#00BF63"
+            android:fontFamily="@font/barlow_extrabold"
             android:text="Picuí"
             android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/layoutPicui"
@@ -570,20 +630,22 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/alunoPicuiText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Aluno: 17/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Aluno: 17/07"
+                android:textColor="@android:color/white" />
 
             <TextView
+                android:id="@+id/servidorPicuiText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Servidor: 16/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Servidor: 16/07"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
         <!-- Princesa Isabel -->
@@ -593,9 +655,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:backgroundTint="#00BF63"
+            android:fontFamily="@font/barlow_extrabold"
             android:text="Princesa Isabel"
             android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/layoutPrincesaIsabel"
@@ -608,20 +672,22 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/alunoPrincesaIsabelText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Aluno: 17/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Aluno: 17/07"
+                android:textColor="@android:color/white" />
 
             <TextView
+                android:id="@+id/servidorPrincesaIsabelText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Servidor: 16/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Servidor: 16/07"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
         <!-- Santa Luzia -->
@@ -631,9 +697,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:backgroundTint="#00BF63"
-            android:text="SantaLuzia"
+            android:fontFamily="@font/barlow_extrabold"
+            android:text="Santa Luzia"
             android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/layoutSantaLuzia"
@@ -646,20 +714,22 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/alunoSantaLuziaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Aluno: 17/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Aluno: 17/07"
+                android:textColor="@android:color/white" />
 
             <TextView
+                android:id="@+id/servidorSantaLuziaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Servidor: 16/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Servidor: 16/07"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
         <!-- Santa Rita -->
@@ -669,9 +739,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:backgroundTint="#00BF63"
+            android:fontFamily="@font/barlow_extrabold"
             android:text="Santa Rita"
             android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/layoutSantaRita"
@@ -684,20 +756,22 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/alunoSantaRitaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Aluno: 17/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Aluno: 17/07"
+                android:textColor="@android:color/white" />
 
             <TextView
+                android:id="@+id/servidorSantaRitaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Servidor: 16/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Servidor: 16/07"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
         <!-- Soledade -->
@@ -707,9 +781,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:backgroundTint="#00BF63"
+            android:fontFamily="@font/barlow_extrabold"
             android:text="Soledade"
             android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/layoutSoledade"
@@ -722,20 +798,22 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/alunoSoledadeText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Aluno: 17/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Aluno: 17/07"
+                android:textColor="@android:color/white" />
 
             <TextView
+                android:id="@+id/servidorSoledadeText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Servidor: 16/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Servidor: 16/07"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
         <!-- Sousa -->
@@ -745,9 +823,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:backgroundTint="#00BF63"
+            android:fontFamily="@font/barlow_extrabold"
             android:text="Sousa"
             android:textAllCaps="false"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/layoutSousa"
@@ -760,21 +840,24 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/alunoSousaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Aluno: 17/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Aluno: 17/07"
+                android:textColor="@android:color/white" />
 
             <TextView
+                android:id="@+id/servidorSousaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textview_background"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="4dp"
-                android:text="Servidor: 16/07"/>
+                android:background="@drawable/textview_background"
+                android:text="Servidor: 16/07"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
     </LinearLayout>
+
 </ScrollView>
