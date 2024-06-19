@@ -2,6 +2,7 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/barlow_bold</item>
+        <item>@font/barlow_extrabold</item>
         <item>@font/barlow_semibold</item>
     </array>
 </resources>

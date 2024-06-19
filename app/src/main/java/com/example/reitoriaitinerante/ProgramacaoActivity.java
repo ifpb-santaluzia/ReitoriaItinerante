@@ -35,14 +35,13 @@ public class ProgramacaoActivity extends AppCompatActivity {
         setupExpandableButton(R.id.buttonSoledade, R.id.layoutSoledade);
         setupExpandableButton(R.id.buttonSousa, R.id.layoutSousa);
 
-
     }
 
-    private void setupExpandableButton(int buttonId, final int layoutId) {
-        final Button button = findViewById(buttonId);
-        final LinearLayout layout = findViewById(layoutId);
+    private void setupExpandableButton(int idBotao, final int idLayout) {
+        final Button botao = findViewById(idBotao);
+        final LinearLayout layout = findViewById(idLayout);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        botao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (layout.getVisibility() == View.GONE) {
