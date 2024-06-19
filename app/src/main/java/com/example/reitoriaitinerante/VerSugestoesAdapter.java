@@ -2,17 +2,11 @@ package com.example.reitoriaitinerante;
 
 
 
-import static java.security.AccessController.getContext;
-
-import android.animation.ValueAnimator;
 import android.app.Dialog;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +14,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
@@ -28,31 +21,28 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.ViewPropertyAnimatorCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.net.URISyntaxException;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
+public class VerSugestoesAdapter extends RecyclerView.Adapter<VerSugestoesAdapter.ListaDeSugestaoViewHolder> {
 
-    private List<Sugestion> listaSugestion;
+    private List<Sugestao> listaSugestao;
 
-    public Adapter(List<Sugestion> lista) {
-        this.listaSugestion = lista;
+    public VerSugestoesAdapter(List<Sugestao> lista) {
+        this.listaSugestao = lista;
     }
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemLista = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_lista, parent, false);
-        return new MyViewHolder(itemLista);
+    public ListaDeSugestaoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View itemLista = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_lista_de_sugestao, parent, false);
+        return new ListaDeSugestaoViewHolder(itemLista);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Sugestion sugestion = listaSugestion.get(position);
+    public void onBindViewHolder(@NonNull ListaDeSugestaoViewHolder holder, int position) {
+        Sugestao sugestao = listaSugestao.get(position);
 
-        if (sugestion.getAnonimo() == true){
+        if (sugestao.getAnonimo() == true){
             holder.aluno.setText("Anônimo");
         }
 
@@ -93,7 +83,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         });
 
 
-        holder.titulo.setText(sugestion.getSugestao());
+        holder.titulo.setText(sugestao.getSugestao());
         holder.titulo.setMaxLines(2);
         holder.titulo.setEllipsize(TextUtils.TruncateAt.END);
 
@@ -153,22 +143,22 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return listaSugestion.size();
+        return listaSugestao.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class ListaDeSugestaoViewHolder extends RecyclerView.ViewHolder {
 
 
-        Button readMoreButton;
-        Button denunciar;
-        RelativeLayout layout;
-        Button likeButton;
-        TextView aluno;
-        TextView curtidasTextview;
-        TextView denunciasTextView;
-        TextView titulo;
+        private Button readMoreButton;
+        private Button denunciar;
+        private RelativeLayout layout;
+        private Button likeButton;
+        private TextView aluno;
+        private TextView curtidasTextview;
+        private TextView denunciasTextView;
+        private TextView titulo;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public ListaDeSugestaoViewHolder(@NonNull View itemView) {
             super(itemView);
             denunciasTextView = itemView.findViewById(R.id.denuncias);
             denunciar = itemView.findViewById(R.id.denunciar_button);

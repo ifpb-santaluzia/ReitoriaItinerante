@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -28,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
-    private List<Sugestion> listaSugestion = new ArrayList<>();
-    private Sugestion sugestion;
+    private List<Sugestao> listaSugestao = new ArrayList<>();
+    private Sugestao sugestao;
 
     private Button verSugestaoButton;
 
@@ -72,14 +71,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = getIntent();
-                sugestion = (Sugestion) getIntent().getSerializableExtra("Sugestao");
-                listaSugestion.add(sugestion);
-
+                sugestao = (Sugestao) getIntent().getSerializableExtra("Sugestao");
+                listaSugestao.add(sugestao);
                 Intent intent1 = new Intent(getApplicationContext(), VerSugestaoActivity.class);
-                intent1.putExtra("listaSugestion", (Serializable) listaSugestion);
+                intent1.putExtra("listaSugestion", (Serializable) listaSugestao);
                 startActivity(intent1);
-
-
             }
         });
 

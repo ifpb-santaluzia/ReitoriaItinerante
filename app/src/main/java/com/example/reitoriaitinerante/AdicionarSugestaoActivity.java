@@ -23,7 +23,7 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
 
     private Spinner spinner;
     private TextView escrevaSugestaoText;
-    private List<Sugestion> listaSugestion = new ArrayList<>();
+    private List<Sugestao> listaSugestao = new ArrayList<>();
     private CheckBox anonimoCheckBox;
     private Button salvarButton;
 
@@ -48,14 +48,14 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String topico = spinner.getSelectedItem().toString();
                 String sugestao = escrevaSugestaoText.getText().toString();
-                boolean anonimo = false;
+                boolean anonimo;
                 Toast toast = Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG);
                 if (anonimoCheckBox.isChecked()) {
                     anonimo = true;
                 } else {
                     anonimo = false;
                 }
-                Sugestion sugestion = new Sugestion(sugestao, topico, anonimo);
+                Sugestao sugestion = new Sugestao(sugestao, topico, anonimo);
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 intent.putExtra("Sugestao", (Serializable) sugestion);
                 startActivity(intent);

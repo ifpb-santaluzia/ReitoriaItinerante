@@ -2,12 +2,12 @@ package com.example.reitoriaitinerante;
 
 import java.io.Serializable;
 
-public class Sugestion implements Serializable {
+public class Sugestao implements Serializable {
     private String sugestao;
     private String topico;
     private Boolean anonimo;
 
-    public Sugestion(String sugestao, String topico, Boolean anonimo) {
+    public Sugestao(String sugestao, String topico, Boolean anonimo) {
         this.sugestao = sugestao;
         this.topico = topico;
         this.anonimo = anonimo;
@@ -39,10 +39,10 @@ public class Sugestion implements Serializable {
 
     @Override
     public String toString() {
-        return "Sugestion{" +
-                "sugestao='" + sugestao + '\'' +
-                ", topico='" + topico + '\'' +
-                ", anonimo=" + anonimo +
-                '}';
+        return "Sugestão {" +
+                "Sugestão: " + sugestao +
+                " | Topico: " + topico +
+                " | Anônimo: " + anonimo +
+                "}";
     }
 }
