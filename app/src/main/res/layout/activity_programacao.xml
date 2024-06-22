@@ -462,7 +462,7 @@
             android:gravity="center">
 
             <TextView
-                android:id="@+id/alunoSantaLuziaText"
+                android:id="@+id/alunoMangabeiraText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
@@ -471,7 +471,7 @@
                 android:textColor="@android:color/white" />
 
             <TextView
-                android:id="@+id/servidorSantaLuziaText"
+                android:id="@+id/servidorMangabeiraText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"

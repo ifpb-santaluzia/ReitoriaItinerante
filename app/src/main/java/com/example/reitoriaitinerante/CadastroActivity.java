@@ -2,14 +2,12 @@ package com.example.reitoriaitinerante;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -107,7 +105,7 @@ public class CadastroActivity extends AppCompatActivity {
         String turma = turmaSpinner.getSelectedItem().toString();
         String curso = cursoSpinner.getSelectedItem().toString();
 
-        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+        Intent intent = new Intent(getApplicationContext(), MenuPrincipalActivity.class);
         startActivity(intent);
 
     }

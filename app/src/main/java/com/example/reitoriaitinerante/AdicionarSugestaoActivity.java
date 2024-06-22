@@ -56,7 +56,7 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
                     anonimo = false;
                 }
                 Sugestao sugestion = new Sugestao(sugestao, topico, anonimo);
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MenuPrincipalActivity.class);
                 intent.putExtra("Sugestao", (Serializable) sugestion);
                 startActivity(intent);
             }

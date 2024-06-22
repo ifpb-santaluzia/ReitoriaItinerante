@@ -28,7 +28,7 @@
             android:name=".ProgramacaoActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".MenuPrincipalActivity"
             android:exported="false"
             android:label="@string/app_name"
             android:theme="@style/Theme.ReitoriaItinerante.NoActionBar">
