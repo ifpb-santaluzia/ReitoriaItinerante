@@ -61,7 +61,6 @@ public class ProgramacaoAdapter extends RecyclerView.Adapter<ProgramacaoAdapter.
         }
 
         public void bind(String item) {
-            // Configure o botão com o texto ou outros dados, se necessário
             buttonCampus.setText(item);
         }
     }
