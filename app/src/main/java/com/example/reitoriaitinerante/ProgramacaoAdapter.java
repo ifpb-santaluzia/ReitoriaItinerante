@@ -60,8 +60,8 @@ public class ProgramacaoAdapter extends RecyclerView.Adapter<ProgramacaoAdapter.
             });
         }
 
-        public void bind(String item) {
-            buttonCampus.setText(item);
+        public void bind(String nomeCampus) {
+            buttonCampus.setText(nomeCampus);
         }
     }
 }
