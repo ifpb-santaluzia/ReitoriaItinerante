@@ -1,11 +1,11 @@
 package com.example.reitoriaitinerante;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,39 +14,45 @@ import java.util.List;
 
 public class ProgramacaoAdapter extends RecyclerView.Adapter<ProgramacaoAdapter.ProgramacaoViewHolder> {
 
-    private List<String> listaCampus;
-    private Context mContext;
+    private List<ItemProgramacao> listaDeItensDeProgramacao;
 
-    public ProgramacaoAdapter(Context context, List<String> campus) {
-        mContext = context;
-        listaCampus = campus;
+    public ProgramacaoAdapter(List<ItemProgramacao> campus) {
+
+        listaDeItensDeProgramacao = campus;
     }
 
     @NonNull
     @Override
     public ProgramacaoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.adapter_programacao, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_programacao, parent, false);
         return new ProgramacaoViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ProgramacaoViewHolder holder, int position) {
-        holder.bind(listaCampus.get(position));
+        ItemProgramacao itemDeProgramacao = listaDeItensDeProgramacao.get(position);
+        holder.buttonCampus.setText(itemDeProgramacao.getNomeDoCampus());
+        String eventoAluno = "Aluno: " + itemDeProgramacao.getDataEventoAluno().toString();
+        holder.dataEventoAlunoTextView.setText(eventoAluno);
+
+
     }
 
     @Override
     public int getItemCount() {
-        return listaCampus.size();
+        return listaDeItensDeProgramacao.size();
     }
 
     class ProgramacaoViewHolder extends RecyclerView.ViewHolder {
-        Button buttonCampus;
-        LinearLayout layoutCampus;
+        private Button buttonCampus;
+        private LinearLayout layoutCampus;
+        private TextView dataEventoAlunoTextView;
 
         public ProgramacaoViewHolder(@NonNull View itemView) {
             super(itemView);
             buttonCampus = itemView.findViewById(R.id.buttonCampus);
             layoutCampus = itemView.findViewById(R.id.layoutCampus);
+            dataEventoAlunoTextView = itemView.findViewById(R.id.alunoTextView);
 
             buttonCampus.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -58,10 +64,6 @@ public class ProgramacaoAdapter extends RecyclerView.Adapter<ProgramacaoAdapter.
                     }
                 }
             });
-        }
-
-        public void bind(String nomeCampus) {
-            buttonCampus.setText(nomeCampus);
         }
     }
 }
