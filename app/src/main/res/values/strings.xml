@@ -18,4 +18,14 @@
         <item>Lazer</item>
         <item>Outros</item>
     </string-array>
+        <string name="hyperlinkkaylanni"><a href="www.linkedin.com/in/maria-kaylanni-fernandes-dos-santos-321344316">
+            Maria Kaylanni Fernandes Dos Santos</a></string>
+        <string name="hiperlinkgabriel"><a href="www.linkedin.com/in/maria-kaylanni-fernandes-dos-santos-321344316">
+            Gabriel Souza de Vasconcelos</a></string>
+        <string name="hiperlinktulio"><a href="www.linkedin.com/in/maria-kaylanni-fernandes-dos-santos-321344316">
+            Pedro Lucas</a></string>
+        <string name="hiperlinkpedro"><a href="www.linkedin.com/in/maria-kaylanni-fernandes-dos-santos-321344316">
+            Túlio Sergio</a></string>
+
+
 </resources>
