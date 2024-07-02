@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarSize="10dp"
+    tools:context=".Sobre">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Sobre o aplicativo"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView11"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Estamos felizes em apresentar o nosso novo aplicativo desenvolvido especialmente para facilitar a interação e a participação de todos vocês em nossos eventos da Reitoria Itinerante.  Com este aplicativo, você poderá não apenas receber informações sobre nossos próximos eventos, mas também contribuir com sugestões valiosas, ver as sugestões de outros alunos/servidores e ver as estatísticas tanto do seu campus como de outros campi.  "
+            app:layout_constraintBottom_toTopOf="@+id/textView12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginBottom="9dp"
+            android:text="Principais recursos do aplicativo:"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textView13"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="1. Login Seguro: Garantimos um processo de login seguro e personalizado, permitindo que você acesse suas informações e configurações de forma conveniente e protegida. Seu conforto e segurança são nossa prioridade. "
+            app:layout_constraintBottom_toTopOf="@+id/textView14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="2. Adicionar Sugestões: Com apenas alguns toques, você pode compartilhar suas ideias e sugestões para melhorar o seu campus. Queremos ouvir o que você tem a dizer para que possamos tornar o Instituto melhor para todos. "
+            app:layout_constraintBottom_toTopOf="@+id/textView15"
+            app:layout_constraintStart_toStartOf="@+id/textView13"
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="3. Ver Sugestões: Explore as sugestões de outros alunos/servidores e curta as que você concorda, para dar uma força e aquela demanda ser notada com mais prioridade. Juntos, podemos ajudar a decidir quais ideias serão implementadas e como podemos enriquecer ainda mais a nossa Instituição. "
+            app:layout_constraintBottom_toTopOf="@+id/textView16"
+            app:layout_constraintStart_toStartOf="@+id/textView14"
+            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="4. Ver Programação de Eventos: Não perca nenhum detalhe! Tenha acesso rápido e fácil à programação completa de nossos eventos, incluindo horários, e datas.  "
+            app:layout_constraintBottom_toTopOf="@+id/textView17"
+            app:layout_constraintStart_toStartOf="@+id/textView15"
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginBottom="18dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="5. Visualização de Estatísticas: Explore dados e estatísticas detalhadas das demandas do seu campus e dos campi do IFPB em geral.    "
+            app:layout_constraintBottom_toTopOf="@+id/textView18"
+            app:layout_constraintStart_toStartOf="@+id/textView16"
+            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="35dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Estamos empolgados com o potencial deste aplicativo para fortalecer nossa comunidade e melhorar continuamente nossos eventos com base no feedback direto de vocês. Esperamos que vocês aproveitem ao máximo essa nova ferramenta!  "
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Este aplicativo foi desenvolvido por alunos do curso de Informática do Instituto Federal da Paraíba- Campus Santa Luzia.  " />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:text="Alunos:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/gabrielTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:paddingLeft="20dp"
+            android:text="@string/hiperlinkgabriel" />
+
+        <TextView
+            android:id="@+id/tulioTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:paddingLeft="20dp"
+            android:text="@string/hiperlinktulio"
+            />
+
+        <TextView
+            android:id="@+id/pedroTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:paddingLeft="20dp"
+            android:text="@string/hiperlinkpedro"
+            />
+
+        <TextView
+            android:id="@+id/kaylanniTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:paddingLeft="20dp"
+            android:text="@string/hyperlinkkaylanni"
+            />
+
+
+    </LinearLayout>
+
+</ScrollView>
