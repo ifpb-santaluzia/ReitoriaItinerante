@@ -17,7 +17,6 @@ public class ProgramacaoAdapter extends RecyclerView.Adapter<ProgramacaoAdapter.
     private List<ItemProgramacao> listaDeItensDeProgramacao;
 
     public ProgramacaoAdapter(List<ItemProgramacao> campus) {
-
         listaDeItensDeProgramacao = campus;
     }
 
@@ -34,6 +33,8 @@ public class ProgramacaoAdapter extends RecyclerView.Adapter<ProgramacaoAdapter.
         holder.buttonCampus.setText(itemDeProgramacao.getNomeDoCampus());
         String eventoAluno = "Aluno: " + itemDeProgramacao.getDataEventoAluno().toString();
         holder.dataEventoAlunoTextView.setText(eventoAluno);
+        String eventoServidor = "Servidor: " + itemDeProgramacao.getDataEventoServidor().toString();
+        holder.dataEventoServidorTextView.setText(eventoServidor);
 
 
     }
@@ -47,12 +48,14 @@ public class ProgramacaoAdapter extends RecyclerView.Adapter<ProgramacaoAdapter.
         private Button buttonCampus;
         private LinearLayout layoutCampus;
         private TextView dataEventoAlunoTextView;
+        private TextView dataEventoServidorTextView;
 
         public ProgramacaoViewHolder(@NonNull View itemView) {
             super(itemView);
             buttonCampus = itemView.findViewById(R.id.buttonCampus);
             layoutCampus = itemView.findViewById(R.id.layoutCampus);
             dataEventoAlunoTextView = itemView.findViewById(R.id.alunoTextView);
+            dataEventoServidorTextView = itemView.findViewById(R.id.servidorTextView);
 
             buttonCampus.setOnClickListener(new View.OnClickListener() {
                 @Override
