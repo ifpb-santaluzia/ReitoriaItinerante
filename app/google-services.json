@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "646321649239",
+    "project_id": "reitoriaitinerante-1a384",
+    "storage_bucket": "reitoriaitinerante-1a384.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:646321649239:android:73f6746c830d5b87345512",
+        "android_client_info": {
+          "package_name": "com.example.reitoriaitinerante"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBziFfAlzbZp6PBbb-XWzyfa1vr0dy4v8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
