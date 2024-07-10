@@ -18,6 +18,8 @@ public class VerSugestaoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_sugestao);
 
+        getSupportActionBar().hide();
+
 
         recyclerView = findViewById(R.id.recycleView);
 

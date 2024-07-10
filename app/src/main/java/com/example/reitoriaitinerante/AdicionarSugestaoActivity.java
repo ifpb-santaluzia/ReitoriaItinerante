@@ -38,10 +38,14 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
             return insets;
         });
 
+        getSupportActionBar().hide();
+
         spinner = findViewById(R.id.spinner);
         escrevaSugestaoText = findViewById(R.id.escrevaSugestaoText);
         anonimoCheckBox = findViewById(R.id.anonimoCheckBox);
         salvarButton = findViewById(R.id.salvarButton);
+
+
 
         salvarButton.setOnClickListener(new View.OnClickListener() {
             @Override
