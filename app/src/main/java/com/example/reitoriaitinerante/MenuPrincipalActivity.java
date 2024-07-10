@@ -2,8 +2,9 @@ package com.example.reitoriaitinerante;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -106,6 +107,22 @@ public class MenuPrincipalActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            abrirConfiguracoes();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void abrirConfiguracoes() {
+        // Abrir a Activity de Configurações
+        Intent intent = new Intent(this, ConfiguracaoActivity.class);
+        startActivity(intent);
     }
 
     @Override

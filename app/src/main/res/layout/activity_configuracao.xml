@@ -1,0 +1,67 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ConfiguracaoActivity">
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-4dp"
+        android:text="Configurações"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/modoEscuroTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView11"
+        android:layout_marginTop="34dp"
+        android:fontFamily="@font/barlow_semibold"
+        android:text="Modo Escuro"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <Switch
+        android:id="@+id/modoEscuroSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/textView11"
+        android:layout_marginTop="24dp"/>
+
+    <TextView
+        android:id="@+id/desativarNotificacaoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/modoEscuroTextView"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/barlow_semibold"
+        android:text="Desativar notificações"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <Switch
+        android:id="@+id/switchDisableNotifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/modoEscuroTextView"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/sugestoesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/desativarNotificacaoTextView"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/barlow_semibold"
+        android:text="Ver minhas sugestões"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+</RelativeLayout>

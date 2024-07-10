@@ -20,7 +20,7 @@ public class ProgramacaoActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         List<ItemProgramacao> campus = new ArrayList<ItemProgramacao>();
-        campus.add(new ItemProgramacao("Campus 1",LocalDate.of(2024, 07, 10), LocalDate.of(2024, 10, 15)));
+        campus.add(new ItemProgramacao("Campus 1", LocalDate.of(2024,07,20), LocalDate.of(2024, 11,17)));
         campus.add(new ItemProgramacao("Campus 2",LocalDate.of(2024, 07, 20), LocalDate.of(2024, 11, 17)));
 
         ProgramacaoAdapter programacaoAdapter = new ProgramacaoAdapter(campus);
