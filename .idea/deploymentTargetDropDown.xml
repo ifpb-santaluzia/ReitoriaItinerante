@@ -21,27 +21,11 @@
       <entry key="LoginActivity">
         <State />
       </entry>
-      <entry key="MainActivity">
-        <State />
-      </entry>
       <entry key="ProgramacaoActivity">
         <State />
       </entry>
       <entry key="app">
-        <State>
-          <targetSelectedWithDropDown>
-            <Target>
-              <type value="QUICK_BOOT_TARGET" />
-              <deviceKey>
-                <Key>
-                  <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="C:\Users\julio\.android\avd\Pixel_2_API_34_1.avd" />
-                </Key>
-              </deviceKey>
-            </Target>
-          </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-06-26T01:07:54.321014400Z" />
-        </State>
+        <State />
       </entry>
     </value>
   </component>
