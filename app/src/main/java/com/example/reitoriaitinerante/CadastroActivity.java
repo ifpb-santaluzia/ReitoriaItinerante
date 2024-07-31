@@ -3,17 +3,32 @@ package com.example.reitoriaitinerante;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.reitoriaitinerante.retrofit.AlunoAPI;
+import com.example.reitoriaitinerante.retrofit.RetrofitService;
+import com.example.reitoriaitinerante.ui.Aluno;
+
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class CadastroActivity extends AppCompatActivity {
 
@@ -55,7 +70,7 @@ public class CadastroActivity extends AppCompatActivity {
                 ArrayAdapter<String> arrayAdapterTurma;
                 String[] arrayCurso = null;
                 ArrayAdapter<String> arrayAdapterCurso;
-                switch (modalidadeSpinner.getSelectedItem().toString()){
+                switch (modalidadeSpinner.getSelectedItem().toString()) {
                     case "Técnico Integrado":
                         arrayTurma = getResources().getStringArray(R.array.turma_integrado);
                         arrayCurso = getResources().getStringArray(R.array.curso_tecnico);
@@ -82,10 +97,10 @@ public class CadastroActivity extends AppCompatActivity {
                         break;
                 }
                 arrayAdapterTurma = new ArrayAdapter<String>(
-                        getApplicationContext(), android.R.layout.simple_spinner_item, arrayTurma );
+                        getApplicationContext(), android.R.layout.simple_spinner_item, arrayTurma);
                 turmaSpinner.setAdapter(arrayAdapterTurma);
                 arrayAdapterCurso = new ArrayAdapter<String>(
-                        getApplicationContext(), android.R.layout.simple_spinner_item, arrayCurso );
+                        getApplicationContext(), android.R.layout.simple_spinner_item, arrayCurso);
                 cursoSpinner.setAdapter(arrayAdapterCurso);
             }
 
@@ -97,16 +112,34 @@ public class CadastroActivity extends AppCompatActivity {
 
     }
 
+    RetrofitService retrofitService = new RetrofitService();
+    AlunoAPI alunoAPI = retrofitService.getRetrofit().create(AlunoAPI.class);
+
     // Metodo para salvar os dados dos usuários quando clickar no botão
     private void salvarDados() {
+
         String nome = nomeEditText.getText().toString();
         String campus = campusSpinner.getSelectedItem().toString();
         String modalidade = modalidadeSpinner.getSelectedItem().toString();
         String turma = turmaSpinner.getSelectedItem().toString();
         String curso = cursoSpinner.getSelectedItem().toString();
+        Aluno aluno = new Aluno(nome, campus, modalidade, turma, curso, "mucho texto");
+        alunoAPI.save(aluno).enqueue(new Callback<Aluno>() {
+            @Override
+            public void onResponse(Call<Aluno> call, Response<Aluno> response) {
+                Toast.makeText(getApplicationContext(), "Save successful!!", Toast.LENGTH_LONG).show();
+            }
 
+            @Override
+            public void onFailure(Call<Aluno> call, Throwable throwable) {
+                Toast.makeText(getApplicationContext(), "Save failed!!", Toast.LENGTH_LONG).show();
+                Logger.getLogger(CadastroActivity.class.getName()).log(Level.SEVERE, "error ocurred", throwable);
+            }
+
+        });
         Intent intent = new Intent(getApplicationContext(), MenuPrincipalActivity.class);
         startActivity(intent);
+
 
     }
 }
