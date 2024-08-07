@@ -106,10 +106,8 @@ public class CadastroActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
             }
         });
-
     }
 
     RetrofitService retrofitService = new RetrofitService();
@@ -118,7 +116,7 @@ public class CadastroActivity extends AppCompatActivity {
     // Metodo para salvar os dados dos usuários quando clickar no botão
     private void salvarDados() {
 
-        String nome = nomeEditText.getText().toString();
+        String nome = nomeEditText.getText().toString().trim();
         String campus = campusSpinner.getSelectedItem().toString();
         String modalidade = modalidadeSpinner.getSelectedItem().toString();
         String turma = turmaSpinner.getSelectedItem().toString();

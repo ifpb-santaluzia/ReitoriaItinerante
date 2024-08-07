@@ -55,23 +55,18 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         autenticadorGoogle = findViewById(R.id.loginGoogleButton);
-
         autenticador = FirebaseAuth.getInstance();
         bancoDeDados = FirebaseDatabase.getInstance();
-
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail().build();
-
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
         autenticadorGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 googleSignIn();
             }
         });
-
         /*if(autenticador.getCurrentUser() != null){
             Intent intent = new Intent(LoginActivity.this, CadastroActivity.class);
             startActivity(intent);
@@ -82,14 +77,11 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(intent, RC_SIGN_IN);
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if (requestCode == RC_SIGN_IN){
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-
             GoogleSignInAccount account = null;
             try {
                 account = task.getResult(ApiException.class);
