@@ -15,9 +15,18 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.io.Serializable;
+import com.example.reitoriaitinerante.retrofit.RetrofitService;
+import com.example.reitoriaitinerante.retrofit.SugestaoAPI;
+import com.example.reitoriaitinerante.ui.Sugestao;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class AdicionarSugestaoActivity extends AppCompatActivity {
 
@@ -26,6 +35,7 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
     private List<Sugestao> listaSugestao = new ArrayList<>();
     private CheckBox anonimoCheckBox;
     private Button salvarButton;
+    private Sugestao sugestao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +61,7 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String topico = spinner.getSelectedItem().toString();
-                String sugestao = escrevaSugestaoText.getText().toString();
+                String conteudo = escrevaSugestaoText.getText().toString();
                 boolean anonimo;
                 Toast toast = Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG);
                 if (anonimoCheckBox.isChecked()) {
@@ -59,11 +69,39 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
                 } else {
                     anonimo = false;
                 }
-                Sugestao sugestion = new Sugestao(sugestao, topico, anonimo);
-                Intent intent = new Intent(getApplicationContext(), MenuPrincipalActivity.class);
-                intent.putExtra("Sugestao", (Serializable) sugestion);
-                startActivity(intent);
+                sugestao = new Sugestao(conteudo, topico, anonimo);
+
+                salvarDados();
             }
         });
+
+
+    }
+
+    RetrofitService retrofitService = new RetrofitService();
+    SugestaoAPI sugestaoAPI = retrofitService.getRetrofit().create(SugestaoAPI.class);
+
+
+
+    // Metodo para salvar os dados dos usuários quando clickar no botão
+    private void salvarDados() {
+
+        sugestaoAPI.save(sugestao).enqueue(new Callback<Sugestao>() {
+            @Override
+            public void onResponse(Call<Sugestao> call, Response<Sugestao> response) {
+                Toast.makeText(getApplicationContext(), "Save successful!!", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onFailure(Call<Sugestao> call, Throwable throwable) {
+                Toast.makeText(getApplicationContext(), "Save failed!!", Toast.LENGTH_LONG).show();
+                Logger.getLogger(CadastroActivity.class.getName()).log(Level.SEVERE, "error ocurred", throwable);
+            }
+
+        });
+        Intent intent = new Intent(getApplicationContext(), MenuPrincipalActivity.class);
+        startActivity(intent);
+
+
     }
 }

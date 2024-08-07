@@ -1,4 +1,4 @@
-package com.example.reitoriaitinerante;
+package com.example.reitoriaitinerante.ui;
 
 import java.io.Serializable;
 

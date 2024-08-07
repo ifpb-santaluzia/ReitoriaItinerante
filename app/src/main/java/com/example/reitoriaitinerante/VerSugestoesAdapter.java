@@ -21,7 +21,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.ViewPropertyAnimatorCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.reitoriaitinerante.ui.Sugestao;
+
 import java.util.List;
+
+import retrofit2.Call;
 
 public class VerSugestoesAdapter extends RecyclerView.Adapter<VerSugestoesAdapter.ListaDeSugestaoViewHolder> {
 
