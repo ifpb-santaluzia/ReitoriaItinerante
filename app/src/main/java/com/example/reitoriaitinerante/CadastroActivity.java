@@ -61,6 +61,8 @@ public class CadastroActivity extends AppCompatActivity {
         cursoSpinner = findViewById(R.id.cursoSpinner);
         salvarButton = findViewById(R.id.salvarButton);
 
+
+
         // Configurando o botão de salvar
         salvarButton.setOnClickListener(v -> salvarDados());
 
@@ -111,10 +113,8 @@ public class CadastroActivity extends AppCompatActivity {
             }
         });
     }
-
     RetrofitService retrofitService = new RetrofitService();
     AlunoAPI alunoAPI = retrofitService.getRetrofit().create(AlunoAPI.class);
-
     // Metodo para salvar os dados dos usuários quando clickar no botão
     private void salvarDados() {
 
@@ -123,24 +123,28 @@ public class CadastroActivity extends AppCompatActivity {
         String modalidade = modalidadeSpinner.getSelectedItem().toString();
         String turma = turmaSpinner.getSelectedItem().toString();
         String curso = cursoSpinner.getSelectedItem().toString();
-        Aluno aluno = new Aluno(nome, campus, modalidade, turma, curso, "mucho texto");
-        alunoAPI.save(aluno).enqueue(new Callback<Aluno>() {
 
-            //Call<List<Sugestao>> call, Response<List<Sugestao>> response
-            @Override
-            public void onResponse(Call<Aluno> call, Response<Aluno> response) {
-                Toast.makeText(getApplicationContext(), "Save successful!!", Toast.LENGTH_LONG).show();
-            }
 
-            @Override
-            public void onFailure(Call<Aluno> call, Throwable throwable) {
-                Toast.makeText(getApplicationContext(), "Save failed!!", Toast.LENGTH_LONG).show();
-                Logger.getLogger(CadastroActivity.class.getName()).log(Level.SEVERE, "error ocurred", throwable);
-            }
+        if (!nome.equals("") && !campus.equals("Escolha seu campus") && !modalidade.equals("Escolha sua modalidade") && !turma.equals("Selecione sua turma") && !curso.equals("Selecione um curso")){
+            Aluno aluno = new Aluno(nome, campus, modalidade, turma, curso, "mucho texto");
+            Toast.makeText(getApplicationContext(), "Aluno salvo!", Toast.LENGTH_SHORT).show();
+            alunoAPI.save(aluno).enqueue(new Callback<Aluno>() {
+                @Override
+                public void onResponse(Call<Aluno> call, Response<Aluno> response) {
+                    Toast.makeText(getApplicationContext(), "Save successful!!", Toast.LENGTH_LONG).show();
+                }
+                @Override
+                public void onFailure(Call<Aluno> call, Throwable throwable) {
+                    Toast.makeText(getApplicationContext(), "Save failed!!", Toast.LENGTH_LONG).show();
+                    Logger.getLogger(CadastroActivity.class.getName()).log(Level.SEVERE, "error ocurred", throwable);
+                    Intent intent = new Intent(getApplicationContext(), MenuPrincipalActivity.class);
+                    startActivity(intent);
+                }
 
-        });
-        Intent intent = new Intent(getApplicationContext(), MenuPrincipalActivity.class);
-        startActivity(intent);
+            });
+        } else {
+            Toast.makeText(getApplicationContext(), "Não é permitido campos vazios", Toast.LENGTH_SHORT).show();
+        }
 
 
     }

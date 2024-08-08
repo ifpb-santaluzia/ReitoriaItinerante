@@ -71,7 +71,11 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
                 }
                 sugestao = new Sugestao(conteudo, topico, anonimo);
 
-                salvarDados();
+                if (!conteudo.equals("")){
+                    salvarDados();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Não são permitidos campos vazios", Toast.LENGTH_LONG).show();
+                }
             }
         });
 

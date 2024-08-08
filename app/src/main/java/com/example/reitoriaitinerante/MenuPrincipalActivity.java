@@ -31,7 +31,6 @@ public class MenuPrincipalActivity extends AppCompatActivity {
 
     private List<Sugestao> listaSugestao = new ArrayList<>();
     private Sugestao sugestao;
-
     private Button verSugestaoButton;
 
     private Button verProgramacaoButton;
