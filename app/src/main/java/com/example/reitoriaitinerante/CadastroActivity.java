@@ -20,8 +20,10 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.reitoriaitinerante.retrofit.AlunoAPI;
 import com.example.reitoriaitinerante.retrofit.RetrofitService;
 import com.example.reitoriaitinerante.ui.Aluno;
+import com.example.reitoriaitinerante.ui.Sugestao;
 
 
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -123,6 +125,8 @@ public class CadastroActivity extends AppCompatActivity {
         String curso = cursoSpinner.getSelectedItem().toString();
         Aluno aluno = new Aluno(nome, campus, modalidade, turma, curso, "mucho texto");
         alunoAPI.save(aluno).enqueue(new Callback<Aluno>() {
+
+            //Call<List<Sugestao>> call, Response<List<Sugestao>> response
             @Override
             public void onResponse(Call<Aluno> call, Response<Aluno> response) {
                 Toast.makeText(getApplicationContext(), "Save successful!!", Toast.LENGTH_LONG).show();

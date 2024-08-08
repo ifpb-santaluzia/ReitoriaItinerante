@@ -1,7 +1,5 @@
 package com.example.reitoriaitinerante;
 
-
-
 import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
