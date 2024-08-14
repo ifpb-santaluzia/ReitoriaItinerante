@@ -52,13 +52,6 @@ public class MenuPrincipalActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         verSugestaoButton = findViewById(R.id.verSugestaoButton);
         adicionarsugestaoButton = findViewById(R.id.adicionarSugestaoButton);
-        verProgramacaoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ProgramacaoActivity.class);
-                startActivity(intent);
-            }
-        });
 
         adicionarsugestaoButton.setOnClickListener(new View.OnClickListener() {
             @Override

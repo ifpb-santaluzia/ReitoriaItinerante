@@ -168,5 +168,6 @@ public class VerSugestoesAdapter extends RecyclerView.Adapter<VerSugestoesAdapte
             readMoreButton = itemView.findViewById(R.id.read_more_button);
             likeButton = itemView.findViewById(R.id.like_button);
         }
+
     }
 }
