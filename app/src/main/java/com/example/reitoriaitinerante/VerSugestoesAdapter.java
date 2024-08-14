@@ -29,8 +29,8 @@ public class VerSugestoesAdapter extends RecyclerView.Adapter<VerSugestoesAdapte
 
     private List<Sugestao> listaSugestao;
 
-    public VerSugestoesAdapter(List<Sugestao> lista) {
-        this.listaSugestao = lista;
+    public VerSugestoesAdapter(List<Sugestao> listaSugestao) {
+        this.listaSugestao = listaSugestao;
     }
 
     @NonNull
@@ -47,9 +47,6 @@ public class VerSugestoesAdapter extends RecyclerView.Adapter<VerSugestoesAdapte
         if (sugestao.getAnonimo() == true){
             holder.aluno.setText("Anônimo");
         }
-
-
-
         holder.denunciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

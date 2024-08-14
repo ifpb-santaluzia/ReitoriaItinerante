@@ -5,9 +5,9 @@ import java.io.Serializable;
 public class Sugestao implements Serializable {
     private String sugestao;
     private String topico;
-    private Boolean anonimo;
+    private boolean anonimo;
 
-    public Sugestao(String sugestao, String topico, Boolean anonimo) {
+    public Sugestao(String sugestao, String topico, boolean anonimo) {
         this.sugestao = sugestao;
         this.topico = topico;
         this.anonimo = anonimo;
@@ -29,11 +29,11 @@ public class Sugestao implements Serializable {
         this.topico = topico;
     }
 
-    public Boolean getAnonimo() {
+    public boolean getAnonimo() {
         return anonimo;
     }
 
-    public void setAnonimo(Boolean anonimo) {
+    public void setAnonimo(boolean anonimo) {
         this.anonimo = anonimo;
     }
 

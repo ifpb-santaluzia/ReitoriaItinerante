@@ -10,14 +10,12 @@ public class Aluno {
     private String curso;
 
     public Aluno(String nome, String campus, String modalidade, String turma, String curso, String email) {
-
         setNome(nome);
         setCampus(campus);
         setModalidade(modalidade);
         setTurma(turma);
         setCurso(curso);
         setEmail(email);
-
     }
 
 

@@ -11,6 +11,7 @@ import com.example.reitoriaitinerante.retrofit.RetrofitService;
 import com.example.reitoriaitinerante.retrofit.SugestaoAPI;
 import com.example.reitoriaitinerante.ui.Sugestao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -41,6 +42,7 @@ public class VerSugestaoActivity extends AppCompatActivity {
 
     private void carregarSugestoes() {
         sugestaoAPI.getAllSugestoes().enqueue(new Callback<List<Sugestao>>() {
+
             @Override
             public void onResponse(Call<List<Sugestao>> call, Response<List<Sugestao>> response) {
                 if (response.isSuccessful() && response.body() != null) {

@@ -32,7 +32,7 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
 
     private Spinner spinner;
     private TextView escrevaSugestaoText;
-    private List<Sugestao> listaSugestao = new ArrayList<>();
+    private ArrayList<Sugestao> listaSugestao = new ArrayList<Sugestao>();
     private CheckBox anonimoCheckBox;
     private Button salvarButton;
     private Sugestao sugestao;
@@ -86,7 +86,6 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
     SugestaoAPI sugestaoAPI = retrofitService.getRetrofit().create(SugestaoAPI.class);
 
 
-
     // Metodo para salvar os dados dos usuários quando clickar no botão
     private void salvarDados() {
 
@@ -105,7 +104,6 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
         });
         Intent intent = new Intent(getApplicationContext(), MenuPrincipalActivity.class);
         startActivity(intent);
-
 
     }
 }
