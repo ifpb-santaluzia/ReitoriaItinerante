@@ -127,7 +127,7 @@ public class CadastroActivity extends AppCompatActivity {
 
         if (!nome.equals("") && !campus.equals("Escolha seu campus") && !modalidade.equals("Escolha sua modalidade") && !turma.equals("Selecione sua turma") && !curso.equals("Selecione um curso")){
             Aluno aluno = new Aluno(nome, campus, modalidade, turma, curso, "mucho texto");
-            Toast.makeText(getApplicationContext(), "Aluno salvo!", Toast.LENGTH_SHORT).show();
+
             alunoAPI.save(aluno).enqueue(new Callback<Aluno>() {
                 @Override
                 public void onResponse(Call<Aluno> call, Response<Aluno> response) {
