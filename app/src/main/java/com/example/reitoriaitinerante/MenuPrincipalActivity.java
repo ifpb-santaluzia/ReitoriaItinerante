@@ -1,11 +1,14 @@
 package com.example.reitoriaitinerante;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.reitoriaitinerante.ui.Sugestao;
 import com.google.android.material.snackbar.Snackbar;
@@ -19,6 +22,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.reitoriaitinerante.databinding.ActivityMainBinding;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -26,6 +30,7 @@ import java.util.List;
 
 public class MenuPrincipalActivity extends AppCompatActivity {
 
+    private FirebaseAuth autenticador;
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
@@ -36,7 +41,8 @@ public class MenuPrincipalActivity extends AppCompatActivity {
     private Button verProgramacaoButton;
 
     private Button adicionarsugestaoButton;
-
+    private TextView nomeTextView;
+    private TextView emailTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +50,8 @@ public class MenuPrincipalActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-
-
-        verProgramacaoButton = findViewById(R.id.programacaoButton);
         verSugestaoButton = findViewById(R.id.verSugestaoButton);
         adicionarsugestaoButton = findViewById(R.id.adicionarSugestaoButton);
-
         verProgramacaoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -130,5 +131,21 @@ public class MenuPrincipalActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    public String buscarNome(String email){
+        SharedPreferences sharedPreferences = getPreferences(Context.MODE_PRIVATE);
+        String nome = sharedPreferences.getString(email, "");
+        return nome;
+    }
+
+    public void salvaNome(){
+        SharedPreferences sharedPreferences = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Intent intent = getIntent();
+        String nome = intent.getStringExtra("nome");
+        editor.putString(autenticador.getCurrentUser().getEmail(), nome);
+
+        editor.commit();
     }
 }
