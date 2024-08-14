@@ -65,11 +65,24 @@
     <ImageView
         android:id="@+id/logo"
         android:layout_width="372dp"
-        android:layout_height="264dp"
+        android:layout_height="0dp"
         android:src="@mipmap/reitoria_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/testeTextView" />
+
+    <TextView
+        android:id="@+id/testeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="358dp"
+        android:layout_marginBottom="90dp"
+        android:text="teste"
+        app:layout_constraintBottom_toTopOf="@+id/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
