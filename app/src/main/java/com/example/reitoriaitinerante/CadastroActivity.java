@@ -137,11 +137,13 @@ public class CadastroActivity extends AppCompatActivity {
                 public void onFailure(Call<Aluno> call, Throwable throwable) {
                     Toast.makeText(getApplicationContext(), "Save failed!!", Toast.LENGTH_LONG).show();
                     Logger.getLogger(CadastroActivity.class.getName()).log(Level.SEVERE, "error ocurred", throwable);
-                    Intent intent = new Intent(getApplicationContext(), MenuPrincipalActivity.class);
-                    startActivity(intent);
+
                 }
 
             });
+            Intent intent = new Intent(getApplicationContext(), MenuPrincipalActivity.class);
+            intent.putExtra(nome, "nome");
+            startActivity(intent);
         } else {
             Toast.makeText(getApplicationContext(), "Não é permitido campos vazios", Toast.LENGTH_SHORT).show();
         }
