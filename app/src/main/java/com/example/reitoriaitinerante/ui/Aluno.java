@@ -1,13 +1,15 @@
 package com.example.reitoriaitinerante.ui;
 
 public class Aluno {
-
     private String nome;
   private String campus;
   private String modalidade;
   private String turma;
   private String email;
-    private String curso;
+  private String curso;
+
+
+
 
     public Aluno(String nome, String campus, String modalidade, String turma, String curso, String email) {
         setNome(nome);

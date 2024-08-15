@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.example.reitoriaitinerante.retrofit.RetrofitService;
@@ -24,7 +27,9 @@ public class VerSugestaoActivity extends AppCompatActivity {
     private VerSugestoesAdapter adapter;
     private RetrofitService retrofitService = new RetrofitService();
     private SugestaoAPI sugestaoAPI = retrofitService.getRetrofit().create(SugestaoAPI.class);
+    private Switch verMinhasSugestoesSwitch;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +43,15 @@ public class VerSugestaoActivity extends AppCompatActivity {
 
         // Chamar API e carregar os dados no RecyclerView
         carregarSugestoes();
+
+        verMinhasSugestoesSwitch = findViewById(R.id.verMinhasSugestaoSwitch);
+
+        verMinhasSugestoesSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+            }
+        });
     }
 
     private void carregarSugestoes() {
