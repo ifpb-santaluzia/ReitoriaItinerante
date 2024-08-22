@@ -6,7 +6,6 @@ public class Sugestao implements Serializable {
     private String sugestao;
     private String topico;
     private boolean anonimo;
-    private Aluno aluno;
 
     public Sugestao(String sugestao, String topico, boolean anonimo) {
         this.sugestao = sugestao;
