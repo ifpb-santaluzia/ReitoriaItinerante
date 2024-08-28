@@ -1,6 +1,8 @@
 package com.example.reitoriaitinerante.ui;
 
 public class Aluno {
+
+    private int idAluno;
     private String nome;
   private String campus;
   private String modalidade;
@@ -8,8 +10,13 @@ public class Aluno {
   private String email;
   private String curso;
 
+    public int getIdAluno() {
+        return idAluno;
+    }
 
-
+    public void setIdAluno(int idAluno) {
+        this.idAluno = idAluno;
+    }
 
     public Aluno(String nome, String campus, String modalidade, String turma, String curso, String email) {
         setNome(nome);

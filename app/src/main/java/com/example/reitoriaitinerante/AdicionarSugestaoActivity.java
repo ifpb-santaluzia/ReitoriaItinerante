@@ -15,8 +15,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.reitoriaitinerante.retrofit.AlunoAPI;
 import com.example.reitoriaitinerante.retrofit.RetrofitService;
 import com.example.reitoriaitinerante.retrofit.SugestaoAPI;
+import com.example.reitoriaitinerante.ui.Aluno;
 import com.example.reitoriaitinerante.ui.Sugestao;
 
 import java.util.ArrayList;
@@ -35,7 +37,7 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
     private ArrayList<Sugestao> listaSugestao = new ArrayList<Sugestao>();
     private CheckBox anonimoCheckBox;
     private Button salvarButton;
-    private Sugestao sugestao;
+   // private Sugestao sugestao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,10 +71,14 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
                 } else {
                     anonimo = false;
                 }
-                sugestao = new Sugestao(conteudo, topico, anonimo);
+                //String emailDoAluno=
+                // encontra alunono banco pelo email
+                Aluno aluno = new Aluno("Túlio", "Santa Luzia", "adsdas", "3° ano", "Tecsdf", "tulio@gmail.com");
+                aluno.setIdAluno(1);
+                Sugestao sugestao = new Sugestao(conteudo, topico, anonimo, aluno);
 
                 if (!conteudo.equals("")){
-                    salvarDados();
+                    salvarDados(sugestao);
                 } else {
                     Toast.makeText(getApplicationContext(), "Não são permitidos campos vazios", Toast.LENGTH_LONG).show();
                 }
@@ -87,7 +93,7 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
 
 
     // Metodo para salvar os dados dos usuários quando clickar no botão
-    private void salvarDados() {
+    private void salvarDados(Sugestao sugestao) {
 
         sugestaoAPI.save(sugestao).enqueue(new Callback<Sugestao>() {
             @Override

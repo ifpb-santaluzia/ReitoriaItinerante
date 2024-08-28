@@ -44,7 +44,7 @@ public class VerSugestoesAdapter extends RecyclerView.Adapter<VerSugestoesAdapte
     public void onBindViewHolder(@NonNull ListaDeSugestaoViewHolder holder, int position) {
         Sugestao sugestao = listaSugestao.get(position);
 
-        if (sugestao.getAnonimo() == true){
+        if (sugestao.isAnonimo() == true){
             holder.aluno.setText("Anônimo");
         }
         holder.denunciar.setOnClickListener(new View.OnClickListener() {
@@ -139,15 +139,11 @@ public class VerSugestoesAdapter extends RecyclerView.Adapter<VerSugestoesAdapte
             }
         });
     }
-
     @Override
     public int getItemCount() {
         return listaSugestao.size();
     }
-
     public static class ListaDeSugestaoViewHolder extends RecyclerView.ViewHolder {
-
-
         private Button readMoreButton;
         private Button denunciar;
         private RelativeLayout layout;
@@ -156,7 +152,6 @@ public class VerSugestoesAdapter extends RecyclerView.Adapter<VerSugestoesAdapte
         private TextView curtidasTextview;
         private TextView denunciasTextView;
         private TextView titulo;
-
         public ListaDeSugestaoViewHolder(@NonNull View itemView) {
             super(itemView);
             denunciasTextView = itemView.findViewById(R.id.denuncias);
@@ -168,6 +163,5 @@ public class VerSugestoesAdapter extends RecyclerView.Adapter<VerSugestoesAdapte
             readMoreButton = itemView.findViewById(R.id.read_more_button);
             likeButton = itemView.findViewById(R.id.like_button);
         }
-
     }
 }

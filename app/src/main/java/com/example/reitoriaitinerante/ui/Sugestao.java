@@ -1,16 +1,28 @@
 package com.example.reitoriaitinerante.ui;
 
+import com.example.reitoriaitinerante.retrofit.AlunoAPI;
+
 import java.io.Serializable;
 
 public class Sugestao implements Serializable {
     private String sugestao;
     private String topico;
     private boolean anonimo;
+    private Aluno aluno;
 
-    public Sugestao(String sugestao, String topico, boolean anonimo) {
+    public Aluno getAluno() {
+        return aluno;
+    }
+
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
+    }
+
+    public Sugestao(String sugestao, String topico, boolean anonimo, Aluno aluno) {
         this.sugestao = sugestao;
         this.topico = topico;
         this.anonimo = anonimo;
+        this.aluno = aluno;
     }
 
     public String getSugestao() {
@@ -29,7 +41,7 @@ public class Sugestao implements Serializable {
         this.topico = topico;
     }
 
-    public boolean getAnonimo() {
+    public boolean isAnonimo() {
         return anonimo;
     }
 
