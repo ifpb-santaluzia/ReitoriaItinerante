@@ -8,6 +8,7 @@ public class Sugestao implements Serializable {
     private String sugestao;
     private String topico;
     private boolean anonimo;
+    private int idAluno;
     private Aluno aluno;
 
     public Aluno getAluno() {
@@ -18,11 +19,12 @@ public class Sugestao implements Serializable {
         this.aluno = aluno;
     }
 
-    public Sugestao(String sugestao, String topico, boolean anonimo, Aluno aluno) {
+
+    public Sugestao(String sugestao, String topico, boolean anonimo, int idAluno) {
         this.sugestao = sugestao;
         this.topico = topico;
         this.anonimo = anonimo;
-        this.aluno = aluno;
+        this.idAluno = idAluno;
     }
 
     public String getSugestao() {
@@ -47,6 +49,14 @@ public class Sugestao implements Serializable {
 
     public void setAnonimo(boolean anonimo) {
         this.anonimo = anonimo;
+    }
+
+    public int getIdAluno() {
+        return idAluno;
+    }
+
+    public void setIdAluno(int idAluno) {
+        this.idAluno = idAluno;
     }
 
     @Override

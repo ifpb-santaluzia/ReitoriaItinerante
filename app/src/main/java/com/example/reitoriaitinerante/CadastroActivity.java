@@ -1,6 +1,8 @@
 package com.example.reitoriaitinerante;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -126,9 +128,15 @@ public class CadastroActivity extends AppCompatActivity {
 
 
         if (!nome.equals("") && !campus.equals("Escolha seu campus") && !modalidade.equals("Escolha sua modalidade") && !turma.equals("Selecione sua turma") && !curso.equals("Selecione um curso")){
-            Aluno aluno = new Aluno(nome, campus, modalidade, turma, curso, "mucho texto");
+            SharedPreferences sharedPreferences = getSharedPreferences(
+                    getString(R.string.preferece_file_key), Context.MODE_PRIVATE
+            );
+            String email = sharedPreferences.getString("email", "");
+            Aluno aluno = new Aluno(nome, campus, modalidade, turma, curso, email);
 
             alunoAPI.save(aluno).enqueue(new Callback<Aluno>() {
+
+
                 @Override
                 public void onResponse(Call<Aluno> call, Response<Aluno> response) {
                     Toast.makeText(getApplicationContext(), "Save successful!!", Toast.LENGTH_LONG).show();
