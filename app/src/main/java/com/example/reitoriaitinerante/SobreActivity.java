@@ -1,7 +1,5 @@
 package com.example.reitoriaitinerante;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
@@ -13,7 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class Sobre extends AppCompatActivity {
+public class SobreActivity extends AppCompatActivity {
 
     public TextView kaylanniTextView;
     public TextView gabrielTextView;

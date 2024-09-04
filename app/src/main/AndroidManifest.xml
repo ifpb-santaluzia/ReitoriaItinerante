@@ -13,7 +13,7 @@
         android:theme="@style/Theme.ReitoriaItinerante"
         tools:targetApi="31">
         <activity
-            android:name=".Sobre"
+            android:name=".SobreActivity"
             android:exported="true" />
         <activity
             android:name=".ProgramacaoAdapter"
