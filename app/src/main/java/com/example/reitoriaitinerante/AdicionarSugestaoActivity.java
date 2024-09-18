@@ -82,34 +82,26 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
                         getString(R.string.preferece_file_key), Context.MODE_PRIVATE
                 );
 
-                String emailPreferences = sharedPreferences.getString("email", "");
+
 
                 alunoAPI.getAllAlunos().enqueue(new Callback<List<Aluno>>() {
                     @Override
                     public void onResponse(Call<List<Aluno>> call, Response<List<Aluno>> response) {
+                        String emailPreferences = sharedPreferences.getString("email", "");
                         if (response.isSuccessful()) {
 
-                            if (response.isSuccessful() && response.body() != null) {
-                                List<Aluno> alunosLista = response.body();
-                                // restante do código
-                            }
-
                             List<Aluno> alunosLista = response.body();
-                            Sugestao sugestao = null;
 
                             // Percorrendo a lista de alunos
                             for (Aluno aluno : alunosLista) {
-                                if (aluno.getEmail().equals(emailPreferences)) {
-                                    sugestao = new Sugestao(conteudo, topico, anonimo, aluno.getIdAluno());
+                                // Verificar se o email do aluno não é nulo antes de chamar o equals
+                                if (aluno.getEmail() != null && aluno.getEmail().equals(emailPreferences)) {
+                                    Sugestao sugestao = new Sugestao(conteudo, topico, anonimo, aluno.getIdAluno());
+                                    salvarDados(sugestao);
                                     break; // Para o loop, já que encontrou o aluno correspondente
                                 }
                             }
 
-                            if (sugestao != null) {
-                                salvarDados(sugestao);
-                            } else {
-                                Toast.makeText(getApplicationContext(), "Aluno não encontrado.", Toast.LENGTH_LONG).show();
-                            }
                         } else {
                             Toast.makeText(getApplicationContext(), "Falha ao obter lista de alunos.", Toast.LENGTH_LONG).show();
                         }
@@ -121,13 +113,10 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
                         Logger.getLogger(AdicionarSugestaoActivity.class.getName()).log(Level.SEVERE, "Erro na chamada", throwable);
                     }
                 });
+
             }
         });
-
-
-
     }
-
 
 
 
@@ -139,7 +128,6 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Sugestao> call, Response<Sugestao> response) {
                 Toast.makeText(getApplicationContext(), "Save successful!!", Toast.LENGTH_LONG).show();
-
             }
 
             @Override

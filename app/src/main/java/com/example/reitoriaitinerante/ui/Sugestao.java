@@ -5,20 +5,13 @@ import com.example.reitoriaitinerante.retrofit.AlunoAPI;
 import java.io.Serializable;
 
 public class Sugestao implements Serializable {
+
+
     private String sugestao;
     private String topico;
     private boolean anonimo;
     private int idAluno;
     private Aluno aluno;
-
-    public Aluno getAluno() {
-        return aluno;
-    }
-
-    public void setAluno(Aluno aluno) {
-        this.aluno = aluno;
-    }
-
 
     public Sugestao(String sugestao, String topico, boolean anonimo, int idAluno) {
         this.sugestao = sugestao;
@@ -67,4 +60,5 @@ public class Sugestao implements Serializable {
                 " | Anônimo: " + anonimo +
                 "}";
     }
+
 }
