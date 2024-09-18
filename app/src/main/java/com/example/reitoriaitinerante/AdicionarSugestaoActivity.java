@@ -40,6 +40,7 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
     private ArrayList<Sugestao> listaSugestao = new ArrayList<Sugestao>();
     private CheckBox anonimoCheckBox;
     private Button salvarButton;
+    SugestaoAPI sugestaoAPI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +59,9 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
         escrevaSugestaoText = findViewById(R.id.escrevaSugestaoText);
         anonimoCheckBox = findViewById(R.id.anonimoCheckBox);
         salvarButton = findViewById(R.id.salvarButton);
+        RetrofitService retrofitService = new RetrofitService();
         AlunoAPI alunoAPI = retrofitService.getRetrofit().create(AlunoAPI.class);
+        sugestaoAPI = retrofitService.getRetrofit().create(SugestaoAPI.class);
 
 
 
@@ -81,11 +84,16 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
 
                 String emailPreferences = sharedPreferences.getString("email", "");
 
-
                 alunoAPI.getAllAlunos().enqueue(new Callback<List<Aluno>>() {
                     @Override
                     public void onResponse(Call<List<Aluno>> call, Response<List<Aluno>> response) {
                         if (response.isSuccessful()) {
+
+                            if (response.isSuccessful() && response.body() != null) {
+                                List<Aluno> alunosLista = response.body();
+                                // restante do código
+                            }
+
                             List<Aluno> alunosLista = response.body();
                             Sugestao sugestao = null;
 
@@ -108,9 +116,9 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<List<Aluno>> call, Throwable t) {
+                    public void onFailure(Call<List<Aluno>> call, Throwable throwable) {
                         Toast.makeText(getApplicationContext(), "Falha na chamada de rede.", Toast.LENGTH_LONG).show();
-                        Logger.getLogger(AdicionarSugestaoActivity.class.getName()).log(Level.SEVERE, "Erro na chamada", t);
+                        Logger.getLogger(AdicionarSugestaoActivity.class.getName()).log(Level.SEVERE, "Erro na chamada", throwable);
                     }
                 });
             }
@@ -120,15 +128,12 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
 
     }
 
-    RetrofitService retrofitService = new RetrofitService();
-    SugestaoAPI sugestaoAPI = retrofitService.getRetrofit().create(SugestaoAPI.class);
+
 
 
 
     // Metodo para salvar os dados dos usuários quando clickar no botão
     private void salvarDados(Sugestao sugestao) {
-
-
 
         sugestaoAPI.save(sugestao).enqueue(new Callback<Sugestao>() {
             @Override
