@@ -16,6 +16,9 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.reitoriaitinerante.ui.Sugestao;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -51,6 +54,7 @@ public class MenuPrincipalActivity extends AppCompatActivity {
 
     private TextView testeTexTView;
     private ImageView photoImageView;
+    private GoogleSignInClient googleSignInClient;
 
 
     @Override
@@ -72,10 +76,15 @@ public class MenuPrincipalActivity extends AppCompatActivity {
 
         Button logoutButton = navigationView.findViewById(R.id.logoutButton);
 
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail().build();
+        googleSignInClient = GoogleSignIn.getClient(this, gso);
+
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                autenticador.getInstance().signOut();
+                googleSignInClient.signOut();
                 Toast.makeText(getApplicationContext(), "Logout realizado com sucesso", Toast.LENGTH_LONG).show();
                 Intent intent3 = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent3);
