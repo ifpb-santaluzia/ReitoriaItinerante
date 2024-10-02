@@ -1,16 +1,23 @@
 package com.example.reitoriaitinerante.ui;
 
+import com.example.reitoriaitinerante.retrofit.AlunoAPI;
+
 import java.io.Serializable;
 
 public class Sugestao implements Serializable {
+
+
     private String sugestao;
     private String topico;
     private boolean anonimo;
+    private int idAluno;
+    private Aluno aluno;
 
-    public Sugestao(String sugestao, String topico, boolean anonimo) {
+    public Sugestao(String sugestao, String topico, boolean anonimo, int idAluno) {
         this.sugestao = sugestao;
         this.topico = topico;
         this.anonimo = anonimo;
+        this.idAluno = idAluno;
     }
 
     public String getSugestao() {
@@ -29,12 +36,20 @@ public class Sugestao implements Serializable {
         this.topico = topico;
     }
 
-    public boolean getAnonimo() {
+    public boolean isAnonimo() {
         return anonimo;
     }
 
     public void setAnonimo(boolean anonimo) {
         this.anonimo = anonimo;
+    }
+
+    public int getIdAluno() {
+        return idAluno;
+    }
+
+    public void setIdAluno(int idAluno) {
+        this.idAluno = idAluno;
     }
 
     @Override
@@ -45,4 +60,5 @@ public class Sugestao implements Serializable {
                 " | Anônimo: " + anonimo +
                 "}";
     }
+
 }

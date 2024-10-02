@@ -1,24 +1,33 @@
 package com.example.reitoriaitinerante.ui;
 
+import com.example.reitoriaitinerante.retrofit.SugestaoAPI;
+
 public class Aluno {
 
+    private int idAluno;
     private String nome;
-  private String campus;
-  private String modalidade;
-  private String turma;
-  private String email;
+    private String campus;
+    private String modalidade;
+    private String turma;
+    private String email;
     private String curso;
 
-    public Aluno(String nome, String campus, String modalidade, String turma, String curso, String email) {
-        setNome(nome);
-        setCampus(campus);
-        setModalidade(modalidade);
-        setTurma(turma);
-        setCurso(curso);
-        setEmail(email);
+    public int getIdAluno() {
+        return idAluno;
     }
 
+    public void setIdAluno(int idAluno) {
+        this.idAluno = idAluno;
+    }
 
+    public Aluno(String nome, String campus, String modalidade, String turma, String email, String curso) {
+        this.nome = nome;
+        this.campus = campus;
+        this.modalidade = modalidade;
+        this.turma = turma;
+        this.email = email;
+        this.curso = curso;
+    }
 
     public String getNome() {
         return nome;

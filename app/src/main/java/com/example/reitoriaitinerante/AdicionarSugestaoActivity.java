@@ -1,6 +1,8 @@
 package com.example.reitoriaitinerante;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,8 +17,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.bumptech.glide.Glide;
+import com.example.reitoriaitinerante.retrofit.AlunoAPI;
 import com.example.reitoriaitinerante.retrofit.RetrofitService;
 import com.example.reitoriaitinerante.retrofit.SugestaoAPI;
+import com.example.reitoriaitinerante.ui.Aluno;
 import com.example.reitoriaitinerante.ui.Sugestao;
 
 import java.util.ArrayList;
@@ -35,7 +40,7 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
     private ArrayList<Sugestao> listaSugestao = new ArrayList<Sugestao>();
     private CheckBox anonimoCheckBox;
     private Button salvarButton;
-    private Sugestao sugestao;
+    SugestaoAPI sugestaoAPI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,40 +59,70 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
         escrevaSugestaoText = findViewById(R.id.escrevaSugestaoText);
         anonimoCheckBox = findViewById(R.id.anonimoCheckBox);
         salvarButton = findViewById(R.id.salvarButton);
+        RetrofitService retrofitService = new RetrofitService();
+        AlunoAPI alunoAPI = retrofitService.getRetrofit().create(AlunoAPI.class);
+        sugestaoAPI = retrofitService.getRetrofit().create(SugestaoAPI.class);
 
 
 
         salvarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String topico = spinner.getSelectedItem().toString();
                 String conteudo = escrevaSugestaoText.getText().toString();
-                boolean anonimo;
-                Toast toast = Toast.makeText(getApplicationContext(), "", Toast.LENGTH_LONG);
-                if (anonimoCheckBox.isChecked()) {
-                    anonimo = true;
-                } else {
-                    anonimo = false;
-                }
-                sugestao = new Sugestao(conteudo, topico, anonimo);
+                boolean anonimo = anonimoCheckBox.isChecked();
 
-                if (!conteudo.equals("")){
-                    salvarDados();
-                } else {
+                if (conteudo.isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Não são permitidos campos vazios", Toast.LENGTH_LONG).show();
+                    return;
                 }
+
+                SharedPreferences sharedPreferences = getSharedPreferences(
+                        getString(R.string.preferece_file_key), Context.MODE_PRIVATE
+                );
+
+
+
+                alunoAPI.getAllAlunos().enqueue(new Callback<List<Aluno>>() {
+                    @Override
+                    public void onResponse(Call<List<Aluno>> call, Response<List<Aluno>> response) {
+                        String emailPreferences = sharedPreferences.getString("email", "");
+                        if (response.isSuccessful()) {
+
+                            List<Aluno> alunosLista = response.body();
+
+                            // Percorrendo a lista de alunos
+                            for (Aluno aluno : alunosLista) {
+                                // Verificar se o email do aluno não é nulo antes de chamar o equals
+                                if (aluno.getEmail() != null && aluno.getEmail().equals(emailPreferences)) {
+                                    Sugestao sugestao = new Sugestao(conteudo, topico, anonimo, aluno.getIdAluno());
+                                    salvarDados(sugestao);
+                                    break; // Para o loop, já que encontrou o aluno correspondente
+                                }
+                            }
+
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Falha ao obter lista de alunos.", Toast.LENGTH_LONG).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<Aluno>> call, Throwable throwable) {
+                        Toast.makeText(getApplicationContext(), "Falha na chamada de rede.", Toast.LENGTH_LONG).show();
+                        Logger.getLogger(AdicionarSugestaoActivity.class.getName()).log(Level.SEVERE, "Erro na chamada", throwable);
+                    }
+                });
+
             }
         });
-
-
     }
 
-    RetrofitService retrofitService = new RetrofitService();
-    SugestaoAPI sugestaoAPI = retrofitService.getRetrofit().create(SugestaoAPI.class);
+
 
 
     // Metodo para salvar os dados dos usuários quando clickar no botão
-    private void salvarDados() {
+    private void salvarDados(Sugestao sugestao) {
 
         sugestaoAPI.save(sugestao).enqueue(new Callback<Sugestao>() {
             @Override
