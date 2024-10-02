@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.reitoriaitinerante.ui.Sugestao;
@@ -51,9 +52,12 @@ public class MenuPrincipalActivity extends AppCompatActivity {
     private TextView testeTexTView;
     private ImageView photoImageView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
 
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
@@ -64,8 +68,25 @@ public class MenuPrincipalActivity extends AppCompatActivity {
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
 
+        //View navView = binding.navView.getHeaderView(0);
+
+        Button logoutButton = navigationView.findViewById(R.id.logoutButton);
+
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                autenticador.getInstance().signOut();
+                Toast.makeText(getApplicationContext(), "Logout realizado com sucesso", Toast.LENGTH_LONG).show();
+                Intent intent3 = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent3);
+                finish();
+            }
+        });
+
+
         // Recuperando o cabeçalho do NavigationView
         View headerView = navigationView.getHeaderView(0);
+
 
         // Buscando os TextView dentro do cabeçalho
         nomeTextView = headerView.findViewById(R.id.nomeTextView);
