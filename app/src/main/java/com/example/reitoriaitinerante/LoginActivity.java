@@ -70,11 +70,11 @@ public class LoginActivity extends AppCompatActivity {
                 googleSignIn();
             }
         });
-        /*if(autenticador.getCurrentUser() != null){
+        if(autenticador.getCurrentUser() != null){
             Intent intent = new Intent(LoginActivity.this, CadastroActivity.class);
             startActivity(intent);
             finish();
-        }*/
+        }
     }
     private void googleSignIn(){
         Intent intent = mGoogleSignInClient.getSignInIntent();
