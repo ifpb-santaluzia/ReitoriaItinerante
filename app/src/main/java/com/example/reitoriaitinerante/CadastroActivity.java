@@ -140,7 +140,6 @@ public class CadastroActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<Aluno> call, Response<Aluno> response) {
                     Toast.makeText(getApplicationContext(), "Save successful!!", Toast.LENGTH_LONG).show();
-
                 }
                 @Override
                 public void onFailure(Call<Aluno> call, Throwable throwable) {

@@ -110,13 +110,20 @@ public class LoginActivity extends AppCompatActivity {
                             map.put("name", user.getDisplayName());
                             map.put("profile", user.getPhotoUrl().toString());
 
-                            bancoDeDados.getReference().child("users").child(user.getUid()).setValue(map);
-                            salvarDados();
+                            if (user.getEmail().contains("@academico.ifpb.edu.br") || user.getEmail().contains("@ifpb.edu.br")){
+                                bancoDeDados.getReference().child("users").child(user.getUid()).setValue(map);
+                                salvarDados();
 
-                            Intent intent = new Intent(LoginActivity.this, CadastroActivity.class);
-                            startActivity(intent);
+                                Intent intent = new Intent(LoginActivity.this, CadastroActivity.class);
+                                startActivity(intent);
+
+                            }else {
+                                Toast.makeText(getApplicationContext(), "Tente um email válido!", Toast.LENGTH_SHORT).show();
+                            }
+
+
                         } else {
-                            Toast.makeText(LoginActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this, "Algo deu errado!", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
