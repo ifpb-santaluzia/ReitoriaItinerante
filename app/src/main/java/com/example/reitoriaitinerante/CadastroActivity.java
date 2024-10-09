@@ -117,6 +117,7 @@ public class CadastroActivity extends AppCompatActivity {
     }
     RetrofitService retrofitService = new RetrofitService();
     AlunoAPI alunoAPI = retrofitService.getRetrofit().create(AlunoAPI.class);
+
     // Metodo para salvar os dados dos usuários quando clickar no botão
     private void salvarDados() {
 
@@ -126,17 +127,16 @@ public class CadastroActivity extends AppCompatActivity {
         String turma = turmaSpinner.getSelectedItem().toString();
         String curso = cursoSpinner.getSelectedItem().toString();
 
-
         if (!nome.equals("") && !campus.equals("Escolha seu campus") && !modalidade.equals("Escolha sua modalidade") && !turma.equals("Selecione sua turma") && !curso.equals("Selecione um curso")){
+
             SharedPreferences sharedPreferences = getSharedPreferences(
-                    getString(R.string.preferece_file_key), Context.MODE_PRIVATE
+                    getString(R.string.preference_file_key), Context.MODE_PRIVATE
             );
+
             String email = sharedPreferences.getString("email", "");
             Aluno aluno = new Aluno(nome, campus, modalidade, turma, curso, email);
 
             alunoAPI.save(aluno).enqueue(new Callback<Aluno>() {
-
-
                 @Override
                 public void onResponse(Call<Aluno> call, Response<Aluno> response) {
                     Toast.makeText(getApplicationContext(), "Save successful!!", Toast.LENGTH_LONG).show();
@@ -149,6 +149,7 @@ public class CadastroActivity extends AppCompatActivity {
                 }
 
             });
+
             Intent intent = new Intent(getApplicationContext(), MenuPrincipalActivity.class);
             intent.putExtra(nome, "nome");
             startActivity(intent);

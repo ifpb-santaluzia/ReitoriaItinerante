@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinnerTopico"
         android:layout_width="323dp"
         android:layout_height="0dp"
         android:layout_marginTop="17dp"
@@ -52,12 +52,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
         android:layout_marginTop="27dp"
-        android:text="Anõnimo"
+        android:text="Anônimo"
         app:layout_constraintStart_toStartOf="@+id/escrevaSugestaoText"
         app:layout_constraintTop_toBottomOf="@+id/escrevaSugestaoText" />
 
     <Button
-        android:id="@+id/salvarButton"
+        android:id="@+id/salvarButtonSugestao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="27dp"

@@ -181,7 +181,7 @@ public class MenuPrincipalActivity extends AppCompatActivity {
 
     public void recuperarDados(){
         SharedPreferences sharedPreferences = getSharedPreferences(
-                getString(R.string.preferece_file_key), Context.MODE_PRIVATE
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE
         );
 
         String nome = sharedPreferences.getString("nome", "");

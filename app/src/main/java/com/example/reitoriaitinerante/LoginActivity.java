@@ -71,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
         /*if(autenticador.getCurrentUser() != null){
-            Intent intent = new Intent(LoginActivity.this, CadastroActivity.class);
+            Intent intent = new Intent(LoginActivity.this, MenuPrincipalActivity.class);
             startActivity(intent);
             finish();
         }*/
@@ -137,7 +137,7 @@ public class LoginActivity extends AppCompatActivity {
         String email = user.getEmail().toString().trim();
 
         SharedPreferences sharedPreferences = getSharedPreferences(
-                getString(R.string.preferece_file_key), Context.MODE_PRIVATE
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE
 
         );
         SharedPreferences.Editor editor = sharedPreferences.edit();
