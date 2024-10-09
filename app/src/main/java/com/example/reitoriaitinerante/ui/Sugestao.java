@@ -2,7 +2,7 @@ package com.example.reitoriaitinerante.ui;
 
 import java.io.Serializable;
 
-public class Sugestao {
+public class Sugestao implements Serializable{
 
     private String conteudo;
     private String topico;
@@ -10,12 +10,20 @@ public class Sugestao {
     private int idAluno;
     private Aluno aluno;
 
-    public Sugestao(String conteudo, String topico, boolean anonimo, int idAluno, Aluno aluno) {
+    public Sugestao(String conteudo, String topico, boolean anonimo, int idAluno) {
         this.conteudo = conteudo;
         this.topico = topico;
         this.anonimo = anonimo;
         this.idAluno = idAluno;
         this.aluno =aluno;
+    }
+
+    public Aluno getAluno() {
+        return aluno;
+    }
+
+    public void setAluno(Aluno aluno) {
+        this.aluno = aluno;
     }
 
     public String getConteudo() {

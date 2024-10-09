@@ -40,11 +40,12 @@ public class VerSugestaoActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycleView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
+        verMinhasSugestoesSwitch = findViewById(R.id.verMinhasSugestaoSwitch);
 
         // Chamar API e carregar os dados no RecyclerView
         carregarSugestoes();
 
-        verMinhasSugestoesSwitch = findViewById(R.id.verMinhasSugestaoSwitch);
+
 
         verMinhasSugestoesSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

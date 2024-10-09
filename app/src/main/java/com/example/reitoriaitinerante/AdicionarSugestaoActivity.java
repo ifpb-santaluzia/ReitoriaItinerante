@@ -126,7 +126,8 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
                     Log.i("EMAIL",emailPreferences);
                     Aluno aluno = new Aluno("n","","","","","");
                     aluno.setIdAluno(1);
-                    Sugestao sugestao = new Sugestao(conteudo, topico, anonimo, 1,aluno);
+                    Sugestao sugestao = new Sugestao(conteudo, topico, anonimo, 2);
+                    sugestao.setAluno(aluno);
 
                     sugestaoAPI.save(sugestao).enqueue(new Callback<Sugestao>() {
                         @Override

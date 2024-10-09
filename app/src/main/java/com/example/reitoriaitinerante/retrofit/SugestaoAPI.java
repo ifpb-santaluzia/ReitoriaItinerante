@@ -8,7 +8,7 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 
-public interface SugestaoAPI {
+public interface SugestaoAPI{
     @GET("/sugestao/get-all")
     Call<List<Sugestao>> getAllSugestoes();
 
