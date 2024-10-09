@@ -23,8 +23,6 @@ import com.example.reitoriaitinerante.ui.Sugestao;
 
 import java.util.List;
 
-import retrofit2.Call;
-
 public class VerSugestoesAdapter extends RecyclerView.Adapter<VerSugestoesAdapter.ListaDeSugestaoViewHolder> {
 
     private List<Sugestao> listaSugestao;
@@ -82,7 +80,7 @@ public class VerSugestoesAdapter extends RecyclerView.Adapter<VerSugestoesAdapte
         });
 
 
-        holder.titulo.setText(sugestao.getSugestao());
+        holder.titulo.setText(sugestao.getConteudo());
         holder.titulo.setMaxLines(2);
         holder.titulo.setEllipsize(TextUtils.TruncateAt.END);
 

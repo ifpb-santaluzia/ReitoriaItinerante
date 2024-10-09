@@ -134,7 +134,7 @@ public class CadastroActivity extends AppCompatActivity {
             );
 
             String email = sharedPreferences.getString("email", "");
-            Aluno aluno = new Aluno(nome, campus, modalidade, turma, curso, email);
+            Aluno aluno = new Aluno(nome, campus, modalidade, turma, email, curso);
 
             alunoAPI.save(aluno).enqueue(new Callback<Aluno>() {
                 @Override

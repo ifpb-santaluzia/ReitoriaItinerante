@@ -12,6 +12,6 @@ public interface SugestaoAPI {
     @GET("/sugestao/get-all")
     Call<List<Sugestao>> getAllSugestoes();
 
-    @POST("/sugestao/save")
+    @POST("sugestao/save")
     Call<Sugestao> save(@Body Sugestao sugestao);
 }

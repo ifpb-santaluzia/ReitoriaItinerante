@@ -1,31 +1,29 @@
 package com.example.reitoriaitinerante.ui;
 
-import com.example.reitoriaitinerante.retrofit.AlunoAPI;
-
 import java.io.Serializable;
 
-public class Sugestao implements Serializable {
+public class Sugestao {
 
-
-    private String sugestao;
+    private String conteudo;
     private String topico;
     private boolean anonimo;
     private int idAluno;
     private Aluno aluno;
 
-    public Sugestao(String sugestao, String topico, boolean anonimo, int idAluno) {
-        this.sugestao = sugestao;
+    public Sugestao(String conteudo, String topico, boolean anonimo, int idAluno, Aluno aluno) {
+        this.conteudo = conteudo;
         this.topico = topico;
         this.anonimo = anonimo;
         this.idAluno = idAluno;
+        this.aluno =aluno;
     }
 
-    public String getSugestao() {
-        return sugestao;
+    public String getConteudo() {
+        return conteudo;
     }
 
-    public void setSugestao(String sugestao) {
-        this.sugestao = sugestao;
+    public void setConteudo(String conteudo) {
+        this.conteudo = conteudo;
     }
 
     public String getTopico() {
@@ -55,7 +53,7 @@ public class Sugestao implements Serializable {
     @Override
     public String toString() {
         return "Sugestão {" +
-                "Sugestão: " + sugestao +
+                "Sugestão: " + conteudo +
                 " | Topico: " + topico +
                 " | Anônimo: " + anonimo +
                 "}";

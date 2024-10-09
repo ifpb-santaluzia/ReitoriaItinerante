@@ -1,5 +1,4 @@
 package com.example.reitoriaitinerante.retrofit;
-
 import com.example.reitoriaitinerante.ui.Aluno;
 
 import java.util.List;

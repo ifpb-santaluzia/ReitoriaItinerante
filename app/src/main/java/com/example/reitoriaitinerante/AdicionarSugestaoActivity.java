@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -31,7 +32,6 @@ import java.util.logging.Logger;
 
 import retrofit2.Call;
 import retrofit2.Callback;
-
 import retrofit2.Response;
 
 public class AdicionarSugestaoActivity extends AppCompatActivity {
@@ -41,7 +41,6 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
     private ArrayList<Sugestao> listaSugestao = new ArrayList<Sugestao>();
     private CheckBox anonimoCheckBox;
     private Button salvarButton;
-    SugestaoAPI sugestaoAPI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,77 +111,44 @@ public class AdicionarSugestaoActivity extends AppCompatActivity {
         salvarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String topico = spinner.getSelectedItem().toString();
                 String conteudo = escrevaSugestaoText.getText().toString();
                 boolean anonimo = anonimoCheckBox.isChecked();
 
-                if (!conteudo.isEmpty()) {
+                if (!conteudo.equals("")) {
 
                     SharedPreferences sharedPreferences = getSharedPreferences(
                             getString(R.string.preference_file_key), Context.MODE_PRIVATE
                     );
 
                     String emailPreferences = sharedPreferences.getString("email", "");
-                    Sugestao sugestaoAdd = new Sugestao(conteudo, topico, anonimo, 2);
+                    Log.i("EMAIL",emailPreferences);
+                    Aluno aluno = new Aluno("n","","","","","");
+                    aluno.setIdAluno(1);
+                    Sugestao sugestao = new Sugestao(conteudo, topico, anonimo, 1,aluno);
 
-                    sugestaoAPI.save(sugestaoAdd).enqueue(new Callback<Sugestao>() {
+                    sugestaoAPI.save(sugestao).enqueue(new Callback<Sugestao>() {
                         @Override
                         public void onResponse(Call<Sugestao> call, Response<Sugestao> response) {
-                            Toast.makeText(getApplicationContext(), "Save successful!!", Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(getApplicationContext(), MenuPrincipalActivity.class);
+                            startActivity(intent);
+                            Toast.makeText(getApplicationContext(), "Sucesso ao salvar!!", Toast.LENGTH_LONG).show();
                         }
 
                         @Override
                         public void onFailure(Call<Sugestao> call, Throwable throwable) {
-                            Toast.makeText(getApplicationContext(), "Save failed!!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Falha ao salvar!!", Toast.LENGTH_LONG).show();
                             Logger.getLogger(CadastroActivity.class.getName()).log(Level.SEVERE, "error ocurred", throwable);
                         }
 
                     });
 
-                    Intent intent = new Intent(getApplicationContext(), MenuPrincipalActivity.class);
-                    startActivity(intent);
+
                 } else {
                     Toast.makeText(getApplicationContext(), "Campo obrigatório!", Toast.LENGTH_LONG).show();
                 }
             }
         });
     }
-
-    // Metodo para salvar os dados dos usuários quando clickar no botão
-   /* private void salvarDados() {
-
-        String topico = spinner.getSelectedItem().toString();
-        String conteudo = escrevaSugestaoText.getText().toString();
-        boolean anonimo = anonimoCheckBox.isChecked();
-
-        if (!conteudo.isEmpty()) {
-
-            SharedPreferences sharedPreferences = getSharedPreferences(
-                    getString(R.string.preference_file_key), Context.MODE_PRIVATE
-            );
-
-            String emailPreferences = sharedPreferences.getString("email", "");
-            Sugestao sugestaoAdd = new Sugestao(conteudo, topico, anonimo, 2);
-
-            sugestaoAPI.save(sugestaoAdd).enqueue(new Callback<Sugestao>() {
-                @Override
-                public void onResponse(Call<Sugestao> call, Response<Sugestao> response) {
-                    Toast.makeText(getApplicationContext(), "Save successful!!", Toast.LENGTH_LONG).show();
-                }
-
-                @Override
-                public void onFailure(Call<Sugestao> call, Throwable throwable) {
-                    Toast.makeText(getApplicationContext(), "Save failed!!", Toast.LENGTH_LONG).show();
-                    Logger.getLogger(CadastroActivity.class.getName()).log(Level.SEVERE, "error ocurred", throwable);
-                }
-
-            });
-
-            Intent intent = new Intent(getApplicationContext(), MenuPrincipalActivity.class);
-            startActivity(intent);
-        } else {
-            Toast.makeText(getApplicationContext(), "Campo obrigatório!", Toast.LENGTH_LONG).show();
-        }
-    }
-    */
 }
